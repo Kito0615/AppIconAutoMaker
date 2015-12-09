@@ -1,0 +1,506 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		8AEB319D1C17D5D800C1D6F6 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AEB319C1C17D5D800C1D6F6 /* AppDelegate.m */; };
+		8AEB31A01C17D5D800C1D6F6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AEB319F1C17D5D800C1D6F6 /* main.m */; };
+		8AEB31A21C17D5D800C1D6F6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8AEB31A11C17D5D800C1D6F6 /* Assets.xcassets */; };
+		8AEB31A51C17D5D800C1D6F6 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8AEB31A31C17D5D800C1D6F6 /* MainMenu.xib */; };
+		8AEB31B01C17D5D800C1D6F6 /* MyAppIconAutoMakerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AEB31AF1C17D5D800C1D6F6 /* MyAppIconAutoMakerTests.m */; };
+		8AEB31BB1C17D5D800C1D6F6 /* MyAppIconAutoMakerUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AEB31BA1C17D5D800C1D6F6 /* MyAppIconAutoMakerUITests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		8AEB31AC1C17D5D800C1D6F6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8AEB31901C17D5D800C1D6F6 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8AEB31971C17D5D800C1D6F6;
+			remoteInfo = MyAppIconAutoMaker;
+		};
+		8AEB31B71C17D5D800C1D6F6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8AEB31901C17D5D800C1D6F6 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8AEB31971C17D5D800C1D6F6;
+			remoteInfo = MyAppIconAutoMaker;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		8AEB31981C17D5D800C1D6F6 /* MyAppIconAutoMaker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyAppIconAutoMaker.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		8AEB319B1C17D5D800C1D6F6 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		8AEB319C1C17D5D800C1D6F6 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		8AEB319F1C17D5D800C1D6F6 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		8AEB31A11C17D5D800C1D6F6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		8AEB31A41C17D5D800C1D6F6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		8AEB31A61C17D5D800C1D6F6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8AEB31AB1C17D5D800C1D6F6 /* MyAppIconAutoMakerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MyAppIconAutoMakerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		8AEB31AF1C17D5D800C1D6F6 /* MyAppIconAutoMakerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyAppIconAutoMakerTests.m; sourceTree = "<group>"; };
+		8AEB31B11C17D5D800C1D6F6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8AEB31B61C17D5D800C1D6F6 /* MyAppIconAutoMakerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MyAppIconAutoMakerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		8AEB31BA1C17D5D800C1D6F6 /* MyAppIconAutoMakerUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyAppIconAutoMakerUITests.m; sourceTree = "<group>"; };
+		8AEB31BC1C17D5D800C1D6F6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		8AEB31951C17D5D800C1D6F6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8AEB31A81C17D5D800C1D6F6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8AEB31B31C17D5D800C1D6F6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		8AEB318F1C17D5D800C1D6F6 = {
+			isa = PBXGroup;
+			children = (
+				8AEB319A1C17D5D800C1D6F6 /* MyAppIconAutoMaker */,
+				8AEB31AE1C17D5D800C1D6F6 /* MyAppIconAutoMakerTests */,
+				8AEB31B91C17D5D800C1D6F6 /* MyAppIconAutoMakerUITests */,
+				8AEB31991C17D5D800C1D6F6 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		8AEB31991C17D5D800C1D6F6 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8AEB31981C17D5D800C1D6F6 /* MyAppIconAutoMaker.app */,
+				8AEB31AB1C17D5D800C1D6F6 /* MyAppIconAutoMakerTests.xctest */,
+				8AEB31B61C17D5D800C1D6F6 /* MyAppIconAutoMakerUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		8AEB319A1C17D5D800C1D6F6 /* MyAppIconAutoMaker */ = {
+			isa = PBXGroup;
+			children = (
+				8AEB319B1C17D5D800C1D6F6 /* AppDelegate.h */,
+				8AEB319C1C17D5D800C1D6F6 /* AppDelegate.m */,
+				8AEB31A11C17D5D800C1D6F6 /* Assets.xcassets */,
+				8AEB31A31C17D5D800C1D6F6 /* MainMenu.xib */,
+				8AEB31A61C17D5D800C1D6F6 /* Info.plist */,
+				8AEB319E1C17D5D800C1D6F6 /* Supporting Files */,
+			);
+			path = MyAppIconAutoMaker;
+			sourceTree = "<group>";
+		};
+		8AEB319E1C17D5D800C1D6F6 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				8AEB319F1C17D5D800C1D6F6 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		8AEB31AE1C17D5D800C1D6F6 /* MyAppIconAutoMakerTests */ = {
+			isa = PBXGroup;
+			children = (
+				8AEB31AF1C17D5D800C1D6F6 /* MyAppIconAutoMakerTests.m */,
+				8AEB31B11C17D5D800C1D6F6 /* Info.plist */,
+			);
+			path = MyAppIconAutoMakerTests;
+			sourceTree = "<group>";
+		};
+		8AEB31B91C17D5D800C1D6F6 /* MyAppIconAutoMakerUITests */ = {
+			isa = PBXGroup;
+			children = (
+				8AEB31BA1C17D5D800C1D6F6 /* MyAppIconAutoMakerUITests.m */,
+				8AEB31BC1C17D5D800C1D6F6 /* Info.plist */,
+			);
+			path = MyAppIconAutoMakerUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		8AEB31971C17D5D800C1D6F6 /* MyAppIconAutoMaker */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8AEB31BF1C17D5D800C1D6F6 /* Build configuration list for PBXNativeTarget "MyAppIconAutoMaker" */;
+			buildPhases = (
+				8AEB31941C17D5D800C1D6F6 /* Sources */,
+				8AEB31951C17D5D800C1D6F6 /* Frameworks */,
+				8AEB31961C17D5D800C1D6F6 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MyAppIconAutoMaker;
+			productName = MyAppIconAutoMaker;
+			productReference = 8AEB31981C17D5D800C1D6F6 /* MyAppIconAutoMaker.app */;
+			productType = "com.apple.product-type.application";
+		};
+		8AEB31AA1C17D5D800C1D6F6 /* MyAppIconAutoMakerTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8AEB31C21C17D5D800C1D6F6 /* Build configuration list for PBXNativeTarget "MyAppIconAutoMakerTests" */;
+			buildPhases = (
+				8AEB31A71C17D5D800C1D6F6 /* Sources */,
+				8AEB31A81C17D5D800C1D6F6 /* Frameworks */,
+				8AEB31A91C17D5D800C1D6F6 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				8AEB31AD1C17D5D800C1D6F6 /* PBXTargetDependency */,
+			);
+			name = MyAppIconAutoMakerTests;
+			productName = MyAppIconAutoMakerTests;
+			productReference = 8AEB31AB1C17D5D800C1D6F6 /* MyAppIconAutoMakerTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		8AEB31B51C17D5D800C1D6F6 /* MyAppIconAutoMakerUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8AEB31C51C17D5D800C1D6F6 /* Build configuration list for PBXNativeTarget "MyAppIconAutoMakerUITests" */;
+			buildPhases = (
+				8AEB31B21C17D5D800C1D6F6 /* Sources */,
+				8AEB31B31C17D5D800C1D6F6 /* Frameworks */,
+				8AEB31B41C17D5D800C1D6F6 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				8AEB31B81C17D5D800C1D6F6 /* PBXTargetDependency */,
+			);
+			name = MyAppIconAutoMakerUITests;
+			productName = MyAppIconAutoMakerUITests;
+			productReference = 8AEB31B61C17D5D800C1D6F6 /* MyAppIconAutoMakerUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		8AEB31901C17D5D800C1D6F6 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0710;
+				ORGANIZATIONNAME = AnarL;
+				TargetAttributes = {
+					8AEB31971C17D5D800C1D6F6 = {
+						CreatedOnToolsVersion = 7.1.1;
+					};
+					8AEB31AA1C17D5D800C1D6F6 = {
+						CreatedOnToolsVersion = 7.1.1;
+						TestTargetID = 8AEB31971C17D5D800C1D6F6;
+					};
+					8AEB31B51C17D5D800C1D6F6 = {
+						CreatedOnToolsVersion = 7.1.1;
+						TestTargetID = 8AEB31971C17D5D800C1D6F6;
+					};
+				};
+			};
+			buildConfigurationList = 8AEB31931C17D5D800C1D6F6 /* Build configuration list for PBXProject "MyAppIconAutoMaker" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 8AEB318F1C17D5D800C1D6F6;
+			productRefGroup = 8AEB31991C17D5D800C1D6F6 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				8AEB31971C17D5D800C1D6F6 /* MyAppIconAutoMaker */,
+				8AEB31AA1C17D5D800C1D6F6 /* MyAppIconAutoMakerTests */,
+				8AEB31B51C17D5D800C1D6F6 /* MyAppIconAutoMakerUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		8AEB31961C17D5D800C1D6F6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8AEB31A21C17D5D800C1D6F6 /* Assets.xcassets in Resources */,
+				8AEB31A51C17D5D800C1D6F6 /* MainMenu.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8AEB31A91C17D5D800C1D6F6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8AEB31B41C17D5D800C1D6F6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		8AEB31941C17D5D800C1D6F6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8AEB31A01C17D5D800C1D6F6 /* main.m in Sources */,
+				8AEB319D1C17D5D800C1D6F6 /* AppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8AEB31A71C17D5D800C1D6F6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8AEB31B01C17D5D800C1D6F6 /* MyAppIconAutoMakerTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8AEB31B21C17D5D800C1D6F6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8AEB31BB1C17D5D800C1D6F6 /* MyAppIconAutoMakerUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		8AEB31AD1C17D5D800C1D6F6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8AEB31971C17D5D800C1D6F6 /* MyAppIconAutoMaker */;
+			targetProxy = 8AEB31AC1C17D5D800C1D6F6 /* PBXContainerItemProxy */;
+		};
+		8AEB31B81C17D5D800C1D6F6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8AEB31971C17D5D800C1D6F6 /* MyAppIconAutoMaker */;
+			targetProxy = 8AEB31B71C17D5D800C1D6F6 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		8AEB31A31C17D5D800C1D6F6 /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8AEB31A41C17D5D800C1D6F6 /* Base */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		8AEB31BD1C17D5D800C1D6F6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		8AEB31BE1C17D5D800C1D6F6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		8AEB31C01C17D5D800C1D6F6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = MyAppIconAutoMaker/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.digiarty.MyAppIconAutoMaker;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		8AEB31C11C17D5D800C1D6F6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = MyAppIconAutoMaker/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.digiarty.MyAppIconAutoMaker;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		8AEB31C31C17D5D800C1D6F6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = MyAppIconAutoMakerTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.digiarty.MyAppIconAutoMakerTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MyAppIconAutoMaker.app/Contents/MacOS/MyAppIconAutoMaker";
+			};
+			name = Debug;
+		};
+		8AEB31C41C17D5D800C1D6F6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = MyAppIconAutoMakerTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.digiarty.MyAppIconAutoMakerTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MyAppIconAutoMaker.app/Contents/MacOS/MyAppIconAutoMaker";
+			};
+			name = Release;
+		};
+		8AEB31C61C17D5D800C1D6F6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = MyAppIconAutoMakerUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.digiarty.MyAppIconAutoMakerUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = MyAppIconAutoMaker;
+				USES_XCTRUNNER = YES;
+			};
+			name = Debug;
+		};
+		8AEB31C71C17D5D800C1D6F6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = MyAppIconAutoMakerUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.digiarty.MyAppIconAutoMakerUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = MyAppIconAutoMaker;
+				USES_XCTRUNNER = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		8AEB31931C17D5D800C1D6F6 /* Build configuration list for PBXProject "MyAppIconAutoMaker" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8AEB31BD1C17D5D800C1D6F6 /* Debug */,
+				8AEB31BE1C17D5D800C1D6F6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8AEB31BF1C17D5D800C1D6F6 /* Build configuration list for PBXNativeTarget "MyAppIconAutoMaker" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8AEB31C01C17D5D800C1D6F6 /* Debug */,
+				8AEB31C11C17D5D800C1D6F6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		8AEB31C21C17D5D800C1D6F6 /* Build configuration list for PBXNativeTarget "MyAppIconAutoMakerTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8AEB31C31C17D5D800C1D6F6 /* Debug */,
+				8AEB31C41C17D5D800C1D6F6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		8AEB31C51C17D5D800C1D6F6 /* Build configuration list for PBXNativeTarget "MyAppIconAutoMakerUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8AEB31C61C17D5D800C1D6F6 /* Debug */,
+				8AEB31C71C17D5D800C1D6F6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 8AEB31901C17D5D800C1D6F6 /* Project object */;
+}
