@@ -33,31 +33,29 @@
         data = [pasteboard dataForType:NSFilenamesPboardType];
     
     if (data) {
-        NSArray * fileNames = [NSPropertyListSerialization propertyListFromData:data                                                               mutabilityOption:kCFPropertyListImmutable format:nil errorDescription:&errorDescription];
+        NSArray * fileNames = [NSPropertyListSerialization propertyListFromData:data mutabilityOption:NSPropertyListImmutable format:nil errorDescription:&errorDescription];
         NSString * filePath = [fileNames lastObject];
-        
-        NSLog(@"fileNames : %@", fileNames);
-        NSLog(@"file Path:%@", filePath);
         
         NSImage * pic = [[NSImage alloc] initWithContentsOfFile:filePath];
         
-        NSLog(@"pic:%@", pic);
-        
         [self setImage:pic];
     }
-    
     
     /* we accepted the drag operation */
     return YES;
 }
 
 - (void)drawRect:(NSRect)dirtyRect {
-    
-    
-    
     [super drawRect:dirtyRect];
-    
     // Drawing code here.
+    
+    CGContextRef context = [[NSGraphicsContext currentContext] graphicsPort];
+    CGContextSetStrokeColorWithColor(context, [[NSColor redColor] CGColor]);
+    
+    CGContextStrokeRect(context, dirtyRect);
+    
+    
+    
 }
 
 @end

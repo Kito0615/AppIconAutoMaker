@@ -13,6 +13,8 @@
 		8AEB31A51C17D5D800C1D6F6 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8AEB31A31C17D5D800C1D6F6 /* MainMenu.xib */; };
 		8AEB31B01C17D5D800C1D6F6 /* MyAppIconAutoMakerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AEB31AF1C17D5D800C1D6F6 /* MyAppIconAutoMakerTests.m */; };
 		8AEB31BB1C17D5D800C1D6F6 /* MyAppIconAutoMakerUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AEB31BA1C17D5D800C1D6F6 /* MyAppIconAutoMakerUITests.m */; };
+		8AF927811C1FEB9F00566DE8 /* RedBorderImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AF927801C1FEB9F00566DE8 /* RedBorderImageView.m */; };
+		8AF927831C1FFA3900566DE8 /* SizeFile.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8AF927821C1FFA3900566DE8 /* SizeFile.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +48,9 @@
 		8AEB31B61C17D5D800C1D6F6 /* MyAppIconAutoMakerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MyAppIconAutoMakerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8AEB31BA1C17D5D800C1D6F6 /* MyAppIconAutoMakerUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyAppIconAutoMakerUITests.m; sourceTree = "<group>"; };
 		8AEB31BC1C17D5D800C1D6F6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8AF9277F1C1FEB9F00566DE8 /* RedBorderImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RedBorderImageView.h; sourceTree = "<group>"; };
+		8AF927801C1FEB9F00566DE8 /* RedBorderImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RedBorderImageView.m; sourceTree = "<group>"; };
+		8AF927821C1FFA3900566DE8 /* SizeFile.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = SizeFile.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +101,9 @@
 		8AEB319A1C17D5D800C1D6F6 /* MyAppIconAutoMaker */ = {
 			isa = PBXGroup;
 			children = (
+				8AF9277F1C1FEB9F00566DE8 /* RedBorderImageView.h */,
+				8AF927801C1FEB9F00566DE8 /* RedBorderImageView.m */,
+				8AF927821C1FFA3900566DE8 /* SizeFile.plist */,
 				8AEB319B1C17D5D800C1D6F6 /* AppDelegate.h */,
 				8AEB319C1C17D5D800C1D6F6 /* AppDelegate.m */,
 				8AEB31A11C17D5D800C1D6F6 /* Assets.xcassets */,
@@ -237,6 +245,7 @@
 			files = (
 				8AEB31A21C17D5D800C1D6F6 /* Assets.xcassets in Resources */,
 				8AEB31A51C17D5D800C1D6F6 /* MainMenu.xib in Resources */,
+				8AF927831C1FFA3900566DE8 /* SizeFile.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -261,6 +270,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8AF927811C1FEB9F00566DE8 /* RedBorderImageView.m in Sources */,
 				8AEB31A01C17D5D800C1D6F6 /* main.m in Sources */,
 				8AEB319D1C17D5D800C1D6F6 /* AppDelegate.m in Sources */,
 			);
@@ -395,6 +405,7 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = MyAppIconAutoMaker/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				PRODUCT_BUNDLE_IDENTIFIER = com.digiarty.MyAppIconAutoMaker;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -407,6 +418,7 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = MyAppIconAutoMaker/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				PRODUCT_BUNDLE_IDENTIFIER = com.digiarty.MyAppIconAutoMaker;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -483,6 +495,7 @@
 				8AEB31C11C17D5D800C1D6F6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		8AEB31C21C17D5D800C1D6F6 /* Build configuration list for PBXNativeTarget "MyAppIconAutoMakerTests" */ = {
 			isa = XCConfigurationList;
@@ -491,6 +504,7 @@
 				8AEB31C41C17D5D800C1D6F6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		8AEB31C51C17D5D800C1D6F6 /* Build configuration list for PBXNativeTarget "MyAppIconAutoMakerUITests" */ = {
 			isa = XCConfigurationList;
@@ -499,6 +513,7 @@
 				8AEB31C71C17D5D800C1D6F6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

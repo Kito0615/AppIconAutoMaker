@@ -7,9 +7,21 @@
 //
 
 #import <Cocoa/Cocoa.h>
+#import "RedBorderImageView.h"
 
 @interface AppDelegate : NSObject <NSApplicationDelegate>
+{
+    CALayer * _bigIconLayer;
+    NSOpenPanel * _openPanel;
+}
+@property (weak) IBOutlet NSComboBox *platformSelection;
 
+@property (weak) IBOutlet RedBorderImageView *BigIcon;
+@property (weak) IBOutlet NSTextField *pathFiled;
 
+@property (weak) IBOutlet NSComboBox *ModelSelection;
+
+- (IBAction)Generate:(NSButton *)sender;
+- (IBAction)selectSavePath:(NSButton *)sender;
 @end
 
