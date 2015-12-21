@@ -135,6 +135,10 @@
         
     }
     
+    NSLog(@"%@", [NSString stringWithFormat:@"file://%@", self.pathFiled.stringValue]);
+    
+    [[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:[NSString stringWithFormat:@"file://%@", self.pathFiled.stringValue]]];
+    
 }
 
 
