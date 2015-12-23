@@ -194,7 +194,7 @@
 			name = MyAppIconAutoMakerUITests;
 			productName = MyAppIconAutoMakerUITests;
 			productReference = 8AEB31B61C17D5D800C1D6F6 /* MyAppIconAutoMakerUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
+			productType = "com.apple.product-type.bundle";
 		};
 /* End PBXNativeTarget section */
 

@@ -3,6 +3,27 @@
 <plist version="1.0">
 <array>
 	<dict>
+		<key>iPhone6/6s Setting</key>
+		<dict>
+			<key>Dimensions</key>
+			<string>{87,87}</string>
+			<key>Name</key>
+			<string>icon-Small@3x</string>
+		</dict>
+		<key>iPhone6/6s Spotlight</key>
+		<dict>
+			<key>Dimensions</key>
+			<string>{120,120}</string>
+			<key>Name</key>
+			<string>icon-Small-40@3x</string>
+		</dict>
+		<key>iPhone6/6s+</key>
+		<dict>
+			<key>Dimensions</key>
+			<string>{180,180}</string>
+			<key>Name</key>
+			<string>icon-60@3x</string>
+		</dict>
 		<key>iPhone Non-Retina (iOS 6.1 and Prior)</key>
 		<dict>
 			<key>Dimensions</key>
@@ -103,14 +124,14 @@
 			<key>Name</key>
 			<string>icon-Small-50@2x</string>
 		</dict>
-		<key>iPhone Spotlight Retina</key>
+		<key>iPad Spotlight Retina</key>
 		<dict>
 			<key>Dimensions</key>
 			<string>{80,80}</string>
 			<key>Name</key>
 			<string>icon-Small-40@2x</string>
 		</dict>
-		<key>iPhone Spotlight Non-Retina</key>
+		<key>iPad Spotlight Non-Retina</key>
 		<dict>
 			<key>Dimensions</key>
 			<string>{40,40}</string>
