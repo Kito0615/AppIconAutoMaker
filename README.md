@@ -8,4 +8,5 @@ Then you can choose a directory to save you icons.
 Finally, just click the "generate" button. When operation finished, the finder will open the directory you choose automatically.
 
 12/23 Update:
+
 Add supoort of iPhone6/6s+ icons.
