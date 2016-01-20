@@ -88,6 +88,10 @@
     
     NSArray * macOSXSizeKeys = [macOSXSizeDict allKeys];
     
+    NSDictionary * iOSLaunchImageDict = sizeArr[3];
+    
+    NSArray * iOSLaunchSizeKey = [iOSLaunchImageDict allKeys];
+    
     NSLog(@"%ld", self.platformSelection.indexOfSelectedItem);
     
     switch (self.platformSelection.indexOfSelectedItem) {
@@ -112,7 +116,8 @@
             [self outputImage:image InfoDict:macOSXSizeDict keysArr:macOSXSizeKeys];
             
             break;
-            
+        case 4:
+            [self outputImage:image InfoDict:iOSLaunchImageDict keysArr:iOSLaunchSizeKey];
         default:
             break;
     }

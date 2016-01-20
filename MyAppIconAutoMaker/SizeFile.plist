@@ -225,5 +225,70 @@
 			<string>icon_512x512@2x</string>
 		</dict>
 	</dict>
+	<dict>
+		<key>iPhone None-Retina Portrait</key>
+		<dict>
+			<key>Dimensions</key>
+			<string>{320,480}</string>
+			<key>Name</key>
+			<string>Default</string>
+		</dict>
+		<key>iPhone Retina Portrait</key>
+		<dict>
+			<key>Dimensions</key>
+			<string>{640,960}</string>
+			<key>Name</key>
+			<string>Default@2x</string>
+		</dict>
+		<key>iPad Portrait</key>
+		<dict>
+			<key>Dimensions</key>
+			<string>{768,1024}</string>
+			<key>Name</key>
+			<string>Default-Portrait~iPad</string>
+		</dict>
+		<key>iPad2/mini Retina Portrait</key>
+		<dict>
+			<key>Dimensions</key>
+			<string>{1536,2048}</string>
+			<key>Name</key>
+			<string>Default@2x-Portrait~iPad</string>
+		</dict>
+		<key>iPad/mini None-Retina Landscape</key>
+		<dict>
+			<key>Dimensions</key>
+			<string>{1024,768}</string>
+			<key>Name</key>
+			<string>Default-Landscape~iPad</string>
+		</dict>
+		<key>iPad2/mini Retina Landscape</key>
+		<dict>
+			<key>Dimensions</key>
+			<string>{2048,1536}</string>
+			<key>Name</key>
+			<string>Default@2x-Portrait~iPad</string>
+		</dict>
+		<key>iPhone5 Portrait</key>
+		<dict>
+			<key>Dimensions</key>
+			<string>{640,1136}</string>
+			<key>Name</key>
+			<string>Default-568@2x</string>
+		</dict>
+		<key>iPhone6/6s Portrait</key>
+		<dict>
+			<key>Dimensions</key>
+			<string>{750,1334}</string>
+			<key>Name</key>
+			<string>Default-750@2x</string>
+		</dict>
+		<key>iPhone6/6s plus Portrait</key>
+		<dict>
+			<key>Dimensions</key>
+			<string>{1242,2208}</string>
+			<key>Name</key>
+			<string>Default-736@3x</string>
+		</dict>
+	</dict>
 </array>
 </plist>

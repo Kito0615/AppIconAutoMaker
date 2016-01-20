@@ -45,7 +45,7 @@
 		8AEB31AB1C17D5D800C1D6F6 /* MyAppIconAutoMakerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MyAppIconAutoMakerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8AEB31AF1C17D5D800C1D6F6 /* MyAppIconAutoMakerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyAppIconAutoMakerTests.m; sourceTree = "<group>"; };
 		8AEB31B11C17D5D800C1D6F6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		8AEB31B61C17D5D800C1D6F6 /* MyAppIconAutoMakerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MyAppIconAutoMakerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		8AEB31B61C17D5D800C1D6F6 /* MyAppIconAutoMakerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = MyAppIconAutoMakerUITests.xctest; path = MyAppIconAutoMakerUITests.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
 		8AEB31BA1C17D5D800C1D6F6 /* MyAppIconAutoMakerUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyAppIconAutoMakerUITests.m; sourceTree = "<group>"; };
 		8AEB31BC1C17D5D800C1D6F6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8AF9277F1C1FEB9F00566DE8 /* RedBorderImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RedBorderImageView.h; sourceTree = "<group>"; };

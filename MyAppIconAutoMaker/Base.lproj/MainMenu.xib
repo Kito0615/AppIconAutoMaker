@@ -702,7 +702,7 @@
                         <rect key="frame" x="409" y="247" width="144" height="26"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <animations/>
-                        <comboBoxCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" placeholderString="SelectPlatform" drawsBackground="YES" completes="NO" numberOfVisibleItems="3" id="OGv-4H-9Na">
+                        <comboBoxCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" placeholderString="SelectPlatform" drawsBackground="YES" completes="NO" numberOfVisibleItems="5" id="OGv-4H-9Na">
                             <font key="font" metaFont="system"/>
                             <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -711,6 +711,7 @@
                                 <string>iPad</string>
                                 <string>iPhone+iPad</string>
                                 <string>Mac OS X</string>
+                                <string>iOS LaunchScreen</string>
                             </objectValues>
                         </comboBoxCell>
                     </comboBox>
@@ -771,7 +772,7 @@
                 </subviews>
                 <animations/>
             </view>
-            <point key="canvasLocation" x="331" y="567"/>
+            <point key="canvasLocation" x="413" y="560"/>
         </window>
     </objects>
 </document>
