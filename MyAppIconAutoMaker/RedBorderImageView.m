@@ -41,7 +41,7 @@
         [self setImage:pic];
     }
     
-    /* we accepted the drag operation */
+    /* accepted the drag operation */
     return YES;
 }
 
@@ -53,9 +53,6 @@
     CGContextSetStrokeColorWithColor(context, [[NSColor redColor] CGColor]);
     
     CGContextStrokeRect(context, dirtyRect);
-    
-    
-    
 }
 
 @end

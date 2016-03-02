@@ -23,6 +23,7 @@
     } else {
         self.pathFiled.stringValue = [[NSUserDefaults standardUserDefaults] objectForKey:@"savePath"];
     }
+    [self.platformSelection selectItemAtIndex:0];
 
 }
 - (void)applicationWillTerminate:(NSNotification *)aNotification {
