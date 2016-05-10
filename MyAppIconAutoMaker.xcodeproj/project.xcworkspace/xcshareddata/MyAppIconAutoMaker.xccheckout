@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>92E98F89-EA56-437A-AB4D-AAF1BCE6660F</string>
+	<key>IDESourceControlProjectName</key>
+	<string>MyAppIconAutoMaker</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>990913B4EFC573B3060E7F4E47F0B4439A39B24D</key>
+		<string>https://github.com/Kito0615/AppIconAutoMaker.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>MyAppIconAutoMaker.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>990913B4EFC573B3060E7F4E47F0B4439A39B24D</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/Kito0615/AppIconAutoMaker.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>990913B4EFC573B3060E7F4E47F0B4439A39B24D</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>990913B4EFC573B3060E7F4E47F0B4439A39B24D</string>
+			<key>IDESourceControlWCCName</key>
+			<string>MyAppIconAutoMaker</string>
+		</dict>
+	</array>
+</dict>
+</plist>

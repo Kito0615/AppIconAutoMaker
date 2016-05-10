@@ -23,3 +23,6 @@
 ####20/01/2016 Update:
 
 #####Add support of iOS(iPhone/iPad) launch images.
+
+
+######Final, here is DMG file on [BaiduYun.com](http://pan.baidu.com/s/1jIxtF5k)

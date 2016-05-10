@@ -162,12 +162,16 @@
 
 - (NSImage *)drawImage:(NSImage *)image withSize:(NSSize)size
 {
+    NSBezierPath * path = [NSBezierPath bezierPathWithRoundedRect:NSMakeRect(0, 0, size.width, size.height) xRadius:5 yRadius:5];
     
     NSImage * returnImage = [[NSImage alloc] initWithSize:size];
     
     [returnImage lockFocus];
     
+    
     [image drawInRect:NSMakeRect(0, 0, size.width, size.height) fromRect:NSZeroRect operation:NSCompositeSourceOver fraction:1.0 respectFlipped:YES hints:nil];
+    
+    
     
     [returnImage unlockFocus];
     
