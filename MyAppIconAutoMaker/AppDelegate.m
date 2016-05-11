@@ -85,11 +85,11 @@
     
     NSArray * iPadSizeKeys = [iPadSizeDict allKeys];
     
-    NSDictionary * macOSXSizeDict = sizeArr[2];
-    
-    NSDictionary * appleWatchDict = sizeArr[3];
+    NSDictionary * appleWatchDict = sizeArr[2];
     
     NSArray * appleWatchSizeKeys = [appleWatchDict allKeys];
+    
+    NSDictionary * macOSXSizeDict = sizeArr[3];
     
     NSArray * macOSXSizeKeys = [macOSXSizeDict allKeys];
     
