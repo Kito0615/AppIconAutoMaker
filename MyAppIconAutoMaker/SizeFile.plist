@@ -154,6 +154,71 @@
 		</dict>
 	</dict>
 	<dict>
+		<key>AssetOniPhone@2x</key>
+		<dict>
+			<key>Dimensions</key>
+			<string>{58,58}</string>
+			<key>Name</key>
+			<string>AssetOniPhone@2x</string>
+		</dict>
+		<key>AssetOniPhone@3x</key>
+		<dict>
+			<key>Dimensions</key>
+			<string>{87,87}</string>
+			<key>Name</key>
+			<string>AssetOniPhone@3x</string>
+		</dict>
+		<key>NotificationCenterIcon</key>
+		<dict>
+			<key>Dimensions</key>
+			<string>{48,48}</string>
+			<key>Name</key>
+			<string>NotificationCenterIcon@2x</string>
+		</dict>
+		<key>NotificationCenterIconL</key>
+		<dict>
+			<key>Dimensions</key>
+			<string>{55,55}</string>
+			<key>Name</key>
+			<string>NotificationCenterIconL@2x</string>
+		</dict>
+		<key>Long-LookNotificationIcon</key>
+		<dict>
+			<key>Dimensions</key>
+			<string>{80,80}</string>
+			<key>Name</key>
+			<string>Long-LookNotificationIcon@2x</string>
+		</dict>
+		<key>Long-LookNotificationIconL</key>
+		<dict>
+			<key>Dimensions</key>
+			<string>{88,88}</string>
+			<key>Name</key>
+			<string>Long-LookNotificationIconL@2x</string>
+		</dict>
+		<key>HomeScreenIcon</key>
+		<dict>
+			<key>Dimensions</key>
+			<string>{80,80}</string>
+			<key>Name</key>
+			<string>HomeScreenIcon@2x</string>
+		</dict>
+		<key>Short-LookIcon</key>
+		<dict>
+			<key>Dimensions</key>
+			<string>{172,172}</string>
+			<key>Name</key>
+			<string>Short-LookIcon@2x</string>
+		</dict>
+		<key>Short-LookIconL</key>
+		<dict>
+			<key>Dimensions</key>
+			<string>{196,196}</string>
+			<key>Name</key>
+			<string>Short-LookIconL@2x</string>
+		</dict>
+	</dict>
+	<dict>
 		<key>Mac Non-Retina Small</key>
 		<dict>
 			<key>Dimensions</key>

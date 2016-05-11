@@ -18,11 +18,13 @@
 
 ####23/12/2015 Update:
 
-#####Add supoort of iPhone6/6s+ icons.
+Add supoort of iPhone6/6s+ icons.
 
 ####20/01/2016 Update:
 
-#####Add support of iOS(iPhone/iPad) launch images.
+Add support of iOS(iPhone/iPad) launch images.
 
+####11/05/2016 Update:
+Add Support of Apple Watch.
 
-######Final, here is DMG file on [BaiduYun.com](http://pan.baidu.com/s/1jIxtF5k)
+Final, here is DMG file on [BaiduYun.com](http://pan.baidu.com/s/1jIxtF5k)

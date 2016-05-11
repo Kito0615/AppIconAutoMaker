@@ -87,38 +87,37 @@
     
     NSDictionary * macOSXSizeDict = sizeArr[2];
     
+    NSDictionary * appleWatchDict = sizeArr[3];
+    
+    NSArray * appleWatchSizeKeys = [appleWatchDict allKeys];
+    
     NSArray * macOSXSizeKeys = [macOSXSizeDict allKeys];
     
-    NSDictionary * iOSLaunchImageDict = sizeArr[3];
+    NSDictionary * iOSLaunchImageDict = sizeArr[4];
     
-    NSArray * iOSLaunchSizeKey = [iOSLaunchImageDict allKeys];
+    NSArray * iOSLaunchSizeKeys = [iOSLaunchImageDict allKeys];
     
     NSLog(@"%ld", self.platformSelection.indexOfSelectedItem);
     
     switch (self.platformSelection.indexOfSelectedItem) {
         case 0:
-            
             [self outputImage:image InfoDict:iPhoneSizeDict keysArr:iPhoneSizeKeys];
-            
             break;
         case 1:
-            
             [self outputImage:image InfoDict:iPadSizeDict keysArr:iPadSizeKeys];
-            
             break;
         case 2:
-            
             [self outputImage:image InfoDict:iPhoneSizeDict keysArr:iPhoneSizeKeys];
             [self outputImage:image InfoDict:iPadSizeDict keysArr:iPadSizeKeys];
-            
             break;
         case 3:
-            
-            [self outputImage:image InfoDict:macOSXSizeDict keysArr:macOSXSizeKeys];
-            
+            [self outputImage:image InfoDict:appleWatchDict keysArr:appleWatchSizeKeys];
             break;
         case 4:
-            [self outputImage:image InfoDict:iOSLaunchImageDict keysArr:iOSLaunchSizeKey];
+            [self outputImage:image InfoDict:macOSXSizeDict keysArr:macOSXSizeKeys];
+            break;
+        case 5:
+            [self outputImage:image InfoDict:iOSLaunchImageDict keysArr:iOSLaunchSizeKeys];
         default:
             break;
     }
