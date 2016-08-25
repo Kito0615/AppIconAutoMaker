@@ -125,6 +125,9 @@
 
 - (void)outputImage:(NSImage *)image InfoDict:(NSDictionary *)infoDict keysArr:(NSArray *)keysArr
 {
+    NSView * view = [NSView new];
+    
+    CGFloat scale = [view convertSizeToBacking:CGSizeMake(1, 1)].width;
     
     for (NSString * sizeKey in keysArr) {
         
@@ -136,7 +139,7 @@
         
         NSString * iconName = [iconInfoDict objectForKey:@"Name"];
         
-        [self outputImage:image withSize:iconSize andName:iconName];
+        [self outputImage:image withSize:CGSizeMake(iconSize.width / scale, iconSize.height / scale) andName:iconName];
         
     }
     
