@@ -26,5 +26,3 @@ Add support of iOS(iPhone/iPad) launch images.
 
 ####11/05/2016 Update:
 Add Support of Apple Watch.
-
-Final, here is DMG file on [BaiduYun.com](https://pan.baidu.com/s/1gf4qUAZ)
