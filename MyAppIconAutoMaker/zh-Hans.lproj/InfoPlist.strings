@@ -1,0 +1,8 @@
+/* 
+  InfoPlist.strings
+  MyAppIconAutoMaker
+
+  Created by 张嘉夫 on 16/12/30.
+  Copyright © 2016年 AnarL. All rights reserved.
+*/
+"CFBundleDisplayName" = "图标生成器";
