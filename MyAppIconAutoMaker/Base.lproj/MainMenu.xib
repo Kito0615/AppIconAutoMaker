@@ -776,6 +776,9 @@
                             <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                             <font key="font" metaFont="system"/>
                         </buttonCell>
+                        <connections>
+                            <action selector="roundedChecked:" target="Voe-Tx-rLC" id="940-Zx-gZc"/>
+                        </connections>
                     </button>
                 </subviews>
                 <constraints>

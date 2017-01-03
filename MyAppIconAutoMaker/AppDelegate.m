@@ -58,7 +58,17 @@
     NSLog(@"platform selected index:%ld", (long)sender.indexOfSelectedItem);
     [self.roundedCheckButton setHidden:!(sender.indexOfSelectedItem == 4)];
     self.roundedCheckButton.state = 0;
+    self.BigIcon.layer.cornerRadius = 0;
 }
+
+- (IBAction)roundedChecked:(NSButton *)sender {
+    if (sender.state) {
+        self.BigIcon.layer.cornerRadius = CORNER_RADIUS_PERCENT * self.BigIcon.frame.size.width;
+    }else {
+        self.BigIcon.layer.cornerRadius = 0;
+    }
+}
+
 
 
 - (IBAction)Generate:(NSButton *)sender {
