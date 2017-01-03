@@ -13,6 +13,7 @@
 @interface AppDelegate ()
 
 @property (weak) IBOutlet NSWindow *window;
+
 @end
 
 @implementation AppDelegate
@@ -35,6 +36,18 @@
 -(BOOL)applicationShouldTerminateAfterLastWindowClosed:(NSApplication *)sender
 {
     return YES;
+}
+
+-(NSString *)encodingPathString {
+    return [self.pathFiled.stringValue stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+}
+
+-(NSString *)appiconsetPathString {
+    return [[self encodingPathString] stringByAppendingString:@"/AppIcon.appiconset"];
+}
+
+-(NSURL *)appiconsetPath {
+    return [NSURL URLWithString:[NSString stringWithFormat:@"file://%@", [self appiconsetPathString]]];
 }
 
 - (IBAction)selectSavePath:(NSButton *)sender {
@@ -68,8 +81,6 @@
         self.BigIcon.layer.cornerRadius = 0;
     }
 }
-
-
 
 - (IBAction)Generate:(NSButton *)sender {
     
@@ -118,6 +129,20 @@
     
     NSLog(@"%ld", self.platformSelection.indexOfSelectedItem);
     
+    NSLog(@"pathFiled: %@", [self encodingPathString]);
+    
+    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"file://%@", [self encodingPathString]]];
+    
+    NSLog(@"url %@", url);
+    
+    NSError *error;
+    
+    [[NSFileManager defaultManager] createDirectoryAtURL:[self appiconsetPath] withIntermediateDirectories:YES attributes:nil error:&error];
+    
+    if (error) {
+        NSLog(@"创建文件夹错误：%@", error.description);
+    }
+    
     switch (self.platformSelection.indexOfSelectedItem) {
         case 0:
             [self outputImage:image InfoDict:iPhoneSizeDict keysArr:iPhoneSizeKeys];
@@ -162,9 +187,9 @@
         
     }
     
-    NSLog(@"%@", [NSString stringWithFormat:@"file://%@", self.pathFiled.stringValue]);
+    NSLog(@"%@", [NSString stringWithFormat:@"file://%@", [self encodingPathString]]);
     
-    [[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:[NSString stringWithFormat:@"file://%@", self.pathFiled.stringValue]]];
+    [[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:[NSString stringWithFormat:@"file://%@", [self encodingPathString]]]];
     
 }
 
@@ -175,7 +200,7 @@
     
     NSData * outputData = [[NSBitmapImageRep imageRepWithData:imageData] representationUsingType:NSPNGFileType properties:@{}];
     
-    NSString * filePath = [self.pathFiled.stringValue stringByAppendingPathComponent:[NSString stringWithFormat:@"%@.png", name]];
+    NSString * filePath = [[[self appiconsetPathString] stringByReplacingPercentEscapesUsingEncoding:NSUTF8StringEncoding] stringByAppendingPathComponent:[NSString stringWithFormat:@"%@.png", name]];
     
     [outputData writeToFile:filePath atomically:YES];
     
