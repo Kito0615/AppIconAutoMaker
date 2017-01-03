@@ -52,6 +52,12 @@
     }];
 }
 
+- (IBAction)platformSelected:(NSComboBox *)sender {
+    NSLog(@"platform selected index:%ld", (long)sender.indexOfSelectedItem);
+    [self.roundedCheckButton setHidden:!(sender.indexOfSelectedItem == 4)];
+}
+
+
 - (IBAction)Generate:(NSButton *)sender {
     
     if (!self.BigIcon.image || self.platformSelection.indexOfSelectedItem == -1) {

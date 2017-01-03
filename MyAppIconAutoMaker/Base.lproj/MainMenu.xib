@@ -17,9 +17,9 @@
         <customObject id="Voe-Tx-rLC" customClass="AppDelegate">
             <connections>
                 <outlet property="BigIcon" destination="YgO-Ow-x1C" id="Fca-Qg-jqy"/>
-                <outlet property="ModelSelection" destination="smy-og-ycD" id="Ry5-No-sXn"/>
                 <outlet property="pathFiled" destination="JdU-Px-nOG" id="4K9-KZ-q7f"/>
                 <outlet property="platformSelection" destination="smy-og-ycD" id="KmD-eJ-UFY"/>
+                <outlet property="roundedCheckButton" destination="Ly2-lK-x42" id="mOb-VI-nST"/>
                 <outlet property="window" destination="WVw-lC-8Wo" id="gab-ch-tO1"/>
             </connections>
         </customObject>
@@ -718,6 +718,9 @@
                                 <string>iOS LaunchScreen</string>
                             </objectValues>
                         </comboBoxCell>
+                        <connections>
+                            <action selector="platformSelected:" target="Voe-Tx-rLC" id="3xz-Nl-112"/>
+                        </connections>
                     </comboBox>
                     <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="i5W-kz-8Xw">
                         <rect key="frame" x="377" y="44" width="96" height="32"/>
@@ -767,7 +770,7 @@
                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
                     </textField>
-                    <button translatesAutoresizingMaskIntoConstraints="NO" id="Ly2-lK-x42">
+                    <button hidden="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ly2-lK-x42">
                         <rect key="frame" x="433" y="217" width="77" height="18"/>
                         <buttonCell key="cell" type="check" title="Rounded" bezelStyle="regularSquare" imagePosition="left" inset="2" id="zO4-TW-Hc3">
                             <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
