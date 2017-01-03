@@ -8,7 +8,7 @@
 
 #import "AppDelegate.h"
 
-#define CORNER_RADIUS 5
+#define CORNER_RADIUS_PERCENT 0.2237
 
 @interface AppDelegate ()
 
@@ -173,7 +173,7 @@
 
 - (NSImage *)drawImage:(NSImage *)image withSize:(NSSize)size
 {
-    NSBezierPath * path = [NSBezierPath bezierPathWithRoundedRect:NSMakeRect(0, 0, size.width, size.height) xRadius:CORNER_RADIUS yRadius:CORNER_RADIUS];
+    NSBezierPath * path = [NSBezierPath bezierPathWithRoundedRect:NSMakeRect(0, 0, size.width, size.height) xRadius:size.width*CORNER_RADIUS_PERCENT yRadius:size.height*CORNER_RADIUS_PERCENT];
     
     NSImage * returnImage = [[NSImage alloc] initWithSize:size];
     
