@@ -14,6 +14,10 @@
 
 @property (weak) IBOutlet NSWindow *window;
 
+@property (strong, nonatomic) NSMutableDictionary *contents;
+@property (strong, nonatomic) NSMutableArray *images;
+@property (strong, nonatomic) NSArray *idioms;
+
 @end
 
 @implementation AppDelegate
@@ -143,6 +147,12 @@
         NSLog(@"创建文件夹错误：%@", error.description);
     }
     
+    self.contents = [NSMutableDictionary dictionary];
+    self.images = [NSMutableArray array];
+    NSMutableDictionary *info = [NSMutableDictionary dictionaryWithObject:@"xcode" forKey:@"author"];
+    [info setObject:@1 forKey:@"version"];
+    [self.contents setObject:info forKey:@"info"];
+    
     switch (self.platformSelection.indexOfSelectedItem) {
         case 0:
             [self outputImage:image InfoDict:iPhoneSizeDict keysArr:iPhoneSizeKeys];
@@ -165,6 +175,26 @@
         default:
             break;
     }
+    
+    [self.contents setObject:self.images forKey:@"images"];
+    
+    
+    
+    NSLog(@"contents: %@", self.contents);
+    
+    NSData *jsonData = [NSJSONSerialization dataWithJSONObject:self.contents
+                                                       options:NSJSONWritingPrettyPrinted // Pass 0 if you don't care about the readability of the generated string
+                                                         error:&error];
+    
+    if (! jsonData) {
+        NSLog(@"Got an error: %@", error);
+    } else {
+        NSString *jsonString = [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
+        NSString *fileName = [NSString stringWithFormat:@"%@/Contents.json",
+                              [[self appiconsetPathString] stringByReplacingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
+        [jsonString writeToFile:fileName atomically:NO encoding:NSStringEncodingConversionAllowLossy error:nil];
+    }
+    
 }
 
 - (void)outputImage:(NSImage *)image InfoDict:(NSDictionary *)infoDict keysArr:(NSArray *)keysArr
@@ -204,6 +234,33 @@
     
     [outputData writeToFile:filePath atomically:YES];
     
+    NSMutableDictionary *dict = [NSMutableDictionary dictionaryWithObject:[NSString stringWithFormat:@"%@.png", name] forKey:@"filename"];
+    [dict setObject:@"mac" forKey:@"idiom"];
+    
+    NSRange range = [name rangeOfString:@"@"];
+    NSLog(@"range %lu", (unsigned long)range.location);
+    if (range.location == NSNotFound) {
+        
+         [dict setObject:@"1x" forKey:@"scale"];
+        
+        
+        
+    }else {
+        
+        NSString *scale = [name substringFromIndex:range.location+1];
+        [dict setObject:scale forKey:@"scale"];
+ 
+    }
+    
+    NSString *sizeString = [name substringFromIndex:5];
+    
+    range = [sizeString rangeOfString:@"@"];
+    if (range.location != NSNotFound) {
+        sizeString = [sizeString substringToIndex:range.location];
+    }
+    
+    [dict setObject:sizeString forKey:@"size"];
+    [self.images addObject:dict];
 }
 
 - (NSImage *)drawImage:(NSImage *)image withSize:(NSSize)size
