@@ -155,23 +155,23 @@
     
     switch (self.platformSelection.indexOfSelectedItem) {
         case 0:
-            [self outputImage:image InfoDict:iPhoneSizeDict keysArr:iPhoneSizeKeys];
+            [self outputImage:image InfoDict:iPhoneSizeDict keysArr:iPhoneSizeKeys idiom:@"iphone"];
             break;
         case 1:
-            [self outputImage:image InfoDict:iPadSizeDict keysArr:iPadSizeKeys];
+            [self outputImage:image InfoDict:iPadSizeDict keysArr:iPadSizeKeys idiom:@"ipad"];
             break;
         case 2:
-            [self outputImage:image InfoDict:iPhoneSizeDict keysArr:iPhoneSizeKeys];
-            [self outputImage:image InfoDict:iPadSizeDict keysArr:iPadSizeKeys];
+            [self outputImage:image InfoDict:iPhoneSizeDict keysArr:iPhoneSizeKeys idiom:@"iphone"];
+            [self outputImage:image InfoDict:iPadSizeDict keysArr:iPadSizeKeys idiom:@"ipad"];
             break;
         case 3:
-            [self outputImage:image InfoDict:appleWatchDict keysArr:appleWatchSizeKeys];
+            [self outputImage:image InfoDict:appleWatchDict keysArr:appleWatchSizeKeys idiom:@"watch"];
             break;
         case 4:
-            [self outputImage:image InfoDict:macOSXSizeDict keysArr:macOSXSizeKeys];
+            [self outputImage:image InfoDict:macOSXSizeDict keysArr:macOSXSizeKeys idiom:@"mac"];
             break;
         case 5:
-            [self outputImage:image InfoDict:iOSLaunchImageDict keysArr:iOSLaunchSizeKeys];
+            [self outputImage:image InfoDict:iOSLaunchImageDict keysArr:iOSLaunchSizeKeys idiom:@"iphone"];
         default:
             break;
     }
@@ -197,7 +197,7 @@
     
 }
 
-- (void)outputImage:(NSImage *)image InfoDict:(NSDictionary *)infoDict keysArr:(NSArray *)keysArr
+- (void)outputImage:(NSImage *)image InfoDict:(NSDictionary *)infoDict keysArr:(NSArray *)keysArr idiom:(NSString *)idiom
 {
     NSView * view = [NSView new];
     
@@ -213,7 +213,7 @@
         
         NSString * iconName = [iconInfoDict objectForKey:@"Name"];
         
-        [self outputImage:image withSize:CGSizeMake(iconSize.width / scale, iconSize.height / scale) andName:iconName];
+        [self outputImage:image withSize:CGSizeMake(iconSize.width / scale, iconSize.height / scale) andName:iconName idiom:idiom];
         
     }
     
@@ -224,7 +224,7 @@
 }
 
 
-- (void)outputImage:(NSImage *)image withSize:(NSSize)size andName:(NSString *)name
+- (void)outputImage:(NSImage *)image withSize:(NSSize)size andName:(NSString *)name idiom:(NSString *)idiom
 {
     NSData * imageData = [[self drawImage:image withSize:size] TIFFRepresentation];
     
@@ -235,7 +235,7 @@
     [outputData writeToFile:filePath atomically:YES];
     
     NSMutableDictionary *dict = [NSMutableDictionary dictionaryWithObject:[NSString stringWithFormat:@"%@.png", name] forKey:@"filename"];
-    [dict setObject:@"mac" forKey:@"idiom"];
+    [dict setObject:idiom forKey:@"idiom"];
     
     NSRange range = [name rangeOfString:@"@"];
     NSLog(@"range %lu", (unsigned long)range.location);

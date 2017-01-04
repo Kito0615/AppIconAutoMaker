@@ -677,7 +677,7 @@
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
             <rect key="contentRect" x="964" y="358" width="850" height="650"/>
-            <rect key="screenRect" x="0.0" y="0.0" width="1366" height="745"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="1920" height="1057"/>
             <value key="minSize" type="size" width="850" height="650"/>
             <value key="maxSize" type="size" width="850" height="650"/>
             <view key="contentView" wantsLayer="YES" id="bHN-By-Cj8">
@@ -715,7 +715,6 @@
                                 <string>iPhone+iPad</string>
                                 <string>Apple Watch</string>
                                 <string>Mac OS X</string>
-                                <string>iOS LaunchScreen</string>
                             </objectValues>
                         </comboBoxCell>
                         <connections>
