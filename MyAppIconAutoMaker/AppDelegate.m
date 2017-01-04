@@ -90,7 +90,7 @@
     
     if (!self.BigIcon.image || self.platformSelection.indexOfSelectedItem == -1) {
         
-        NSAlert * alert = [NSAlert alertWithMessageText:@"Please drag an image into the Red Border View Or select a platform." defaultButton:@"OK" alternateButton:nil otherButton:nil informativeTextWithFormat:@""];
+        NSAlert * alert = [NSAlert alertWithMessageText:NSLocalizedString(@"Alert", nil) defaultButton:@"OK" alternateButton:nil otherButton:nil informativeTextWithFormat:@""];
         alert.alertStyle = NSWarningAlertStyle;
         
         [alert beginSheetModalForWindow:self.window completionHandler:^(NSModalResponse returnCode) {
