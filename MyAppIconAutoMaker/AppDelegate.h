@@ -18,8 +18,7 @@
 
 @property (weak) IBOutlet RedBorderImageView *BigIcon;
 @property (weak) IBOutlet NSTextField *pathFiled;
-
-@property (weak) IBOutlet NSComboBox *ModelSelection;
+@property (weak) IBOutlet NSButton *roundedCheckButton;
 
 - (IBAction)Generate:(NSButton *)sender;
 - (IBAction)selectSavePath:(NSButton *)sender;

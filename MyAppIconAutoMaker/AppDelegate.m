@@ -8,9 +8,16 @@
 
 #import "AppDelegate.h"
 
+#define CORNER_RADIUS_PERCENT 0.2237
+
 @interface AppDelegate ()
 
 @property (weak) IBOutlet NSWindow *window;
+
+@property (strong, nonatomic) NSMutableDictionary *contents;
+@property (strong, nonatomic) NSMutableArray *images;
+@property (strong, nonatomic) NSArray *idioms;
+
 @end
 
 @implementation AppDelegate
@@ -35,6 +42,18 @@
     return YES;
 }
 
+-(NSString *)encodingPathString {
+    return [self.pathFiled.stringValue stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+}
+
+-(NSString *)appiconsetPathString {
+    return [[self encodingPathString] stringByAppendingString:@"/AppIcon.appiconset"];
+}
+
+-(NSURL *)appiconsetPath {
+    return [NSURL URLWithString:[NSString stringWithFormat:@"file://%@", [self appiconsetPathString]]];
+}
+
 - (IBAction)selectSavePath:(NSButton *)sender {
     
     _openPanel = [NSOpenPanel openPanel];
@@ -50,6 +69,21 @@
         
         
     }];
+}
+
+- (IBAction)platformSelected:(NSComboBox *)sender {
+    NSLog(@"platform selected index:%ld", (long)sender.indexOfSelectedItem);
+    [self.roundedCheckButton setHidden:!(sender.indexOfSelectedItem == 4)];
+    self.roundedCheckButton.state = 0;
+    self.BigIcon.layer.cornerRadius = 0;
+}
+
+- (IBAction)roundedChecked:(NSButton *)sender {
+    if (sender.state) {
+        self.BigIcon.layer.cornerRadius = CORNER_RADIUS_PERCENT * self.BigIcon.frame.size.width;
+    }else {
+        self.BigIcon.layer.cornerRadius = 0;
+    }
 }
 
 - (IBAction)Generate:(NSButton *)sender {
@@ -99,31 +133,71 @@
     
     NSLog(@"%ld", self.platformSelection.indexOfSelectedItem);
     
+    NSLog(@"pathFiled: %@", [self encodingPathString]);
+    
+    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"file://%@", [self encodingPathString]]];
+    
+    NSLog(@"url %@", url);
+    
+    NSError *error;
+    
+    [[NSFileManager defaultManager] createDirectoryAtURL:[self appiconsetPath] withIntermediateDirectories:YES attributes:nil error:&error];
+    
+    if (error) {
+        NSLog(@"创建文件夹错误：%@", error.description);
+    }
+    
+    self.contents = [NSMutableDictionary dictionary];
+    self.images = [NSMutableArray array];
+    NSMutableDictionary *info = [NSMutableDictionary dictionaryWithObject:@"xcode" forKey:@"author"];
+    [info setObject:@1 forKey:@"version"];
+    [self.contents setObject:info forKey:@"info"];
+    
     switch (self.platformSelection.indexOfSelectedItem) {
         case 0:
-            [self outputImage:image InfoDict:iPhoneSizeDict keysArr:iPhoneSizeKeys];
+            [self outputImage:image InfoDict:iPhoneSizeDict keysArr:iPhoneSizeKeys idiom:@"iphone"];
             break;
         case 1:
-            [self outputImage:image InfoDict:iPadSizeDict keysArr:iPadSizeKeys];
+            [self outputImage:image InfoDict:iPadSizeDict keysArr:iPadSizeKeys idiom:@"ipad"];
             break;
         case 2:
-            [self outputImage:image InfoDict:iPhoneSizeDict keysArr:iPhoneSizeKeys];
-            [self outputImage:image InfoDict:iPadSizeDict keysArr:iPadSizeKeys];
+            [self outputImage:image InfoDict:iPhoneSizeDict keysArr:iPhoneSizeKeys idiom:@"iphone"];
+            [self outputImage:image InfoDict:iPadSizeDict keysArr:iPadSizeKeys idiom:@"ipad"];
             break;
         case 3:
-            [self outputImage:image InfoDict:appleWatchDict keysArr:appleWatchSizeKeys];
+            [self outputImage:image InfoDict:appleWatchDict keysArr:appleWatchSizeKeys idiom:@"watch"];
             break;
         case 4:
-            [self outputImage:image InfoDict:macOSXSizeDict keysArr:macOSXSizeKeys];
+            [self outputImage:image InfoDict:macOSXSizeDict keysArr:macOSXSizeKeys idiom:@"mac"];
             break;
         case 5:
-            [self outputImage:image InfoDict:iOSLaunchImageDict keysArr:iOSLaunchSizeKeys];
+            [self outputImage:image InfoDict:iOSLaunchImageDict keysArr:iOSLaunchSizeKeys idiom:@"iphone"];
         default:
             break;
     }
+    
+    [self.contents setObject:self.images forKey:@"images"];
+    
+    
+    
+    NSLog(@"contents: %@", self.contents);
+    
+    NSData *jsonData = [NSJSONSerialization dataWithJSONObject:self.contents
+                                                       options:NSJSONWritingPrettyPrinted // Pass 0 if you don't care about the readability of the generated string
+                                                         error:&error];
+    
+    if (! jsonData) {
+        NSLog(@"Got an error: %@", error);
+    } else {
+        NSString *jsonString = [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
+        NSString *fileName = [NSString stringWithFormat:@"%@/Contents.json",
+                              [[self appiconsetPathString] stringByReplacingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
+        [jsonString writeToFile:fileName atomically:NO encoding:NSStringEncodingConversionAllowLossy error:nil];
+    }
+    
 }
 
-- (void)outputImage:(NSImage *)image InfoDict:(NSDictionary *)infoDict keysArr:(NSArray *)keysArr
+- (void)outputImage:(NSImage *)image InfoDict:(NSDictionary *)infoDict keysArr:(NSArray *)keysArr idiom:(NSString *)idiom
 {
     NSView * view = [NSView new];
     
@@ -139,41 +213,69 @@
         
         NSString * iconName = [iconInfoDict objectForKey:@"Name"];
         
-        [self outputImage:image withSize:CGSizeMake(iconSize.width / scale, iconSize.height / scale) andName:iconName];
+        [self outputImage:image withSize:CGSizeMake(iconSize.width / scale, iconSize.height / scale) andName:iconName idiom:idiom];
         
     }
     
-    NSLog(@"%@", [NSString stringWithFormat:@"file://%@", self.pathFiled.stringValue]);
+    NSLog(@"%@", [NSString stringWithFormat:@"file://%@", [self encodingPathString]]);
     
-    [[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:[NSString stringWithFormat:@"file://%@", self.pathFiled.stringValue]]];
+    [[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:[NSString stringWithFormat:@"file://%@", [self encodingPathString]]]];
     
 }
 
 
-- (void)outputImage:(NSImage *)image withSize:(NSSize)size andName:(NSString *)name
+- (void)outputImage:(NSImage *)image withSize:(NSSize)size andName:(NSString *)name idiom:(NSString *)idiom
 {
     NSData * imageData = [[self drawImage:image withSize:size] TIFFRepresentation];
     
     NSData * outputData = [[NSBitmapImageRep imageRepWithData:imageData] representationUsingType:NSPNGFileType properties:@{}];
     
-    NSString * filePath = [self.pathFiled.stringValue stringByAppendingPathComponent:[NSString stringWithFormat:@"%@.png", name]];
+    NSString * filePath = [[[self appiconsetPathString] stringByReplacingPercentEscapesUsingEncoding:NSUTF8StringEncoding] stringByAppendingPathComponent:[NSString stringWithFormat:@"%@.png", name]];
     
     [outputData writeToFile:filePath atomically:YES];
     
+    NSMutableDictionary *dict = [NSMutableDictionary dictionaryWithObject:[NSString stringWithFormat:@"%@.png", name] forKey:@"filename"];
+    [dict setObject:idiom forKey:@"idiom"];
+    
+    NSRange range = [name rangeOfString:@"@"];
+    NSLog(@"range %lu", (unsigned long)range.location);
+    if (range.location == NSNotFound) {
+        
+         [dict setObject:@"1x" forKey:@"scale"];
+        
+        
+        
+    }else {
+        
+        NSString *scale = [name substringFromIndex:range.location+1];
+        [dict setObject:scale forKey:@"scale"];
+ 
+    }
+    
+    NSString *sizeString = [name substringFromIndex:5];
+    
+    range = [sizeString rangeOfString:@"@"];
+    if (range.location != NSNotFound) {
+        sizeString = [sizeString substringToIndex:range.location];
+    }
+    
+    [dict setObject:sizeString forKey:@"size"];
+    [self.images addObject:dict];
 }
 
 - (NSImage *)drawImage:(NSImage *)image withSize:(NSSize)size
 {
-    NSBezierPath * path = [NSBezierPath bezierPathWithRoundedRect:NSMakeRect(0, 0, size.width, size.height) xRadius:5 yRadius:5];
+    NSBezierPath * path = [NSBezierPath bezierPathWithRoundedRect:NSMakeRect(0, 0, size.width, size.height) xRadius:size.width*CORNER_RADIUS_PERCENT yRadius:size.height*CORNER_RADIUS_PERCENT];
     
     NSImage * returnImage = [[NSImage alloc] initWithSize:size];
     
     [returnImage lockFocus];
     
+    if (self.roundedCheckButton.state) {
+        [path addClip];
+    }
     
     [image drawInRect:NSMakeRect(0, 0, size.width, size.height) fromRect:NSZeroRect operation:NSCompositeSourceOver fraction:1.0 respectFlipped:YES hints:nil];
-    
-    
     
     [returnImage unlockFocus];
     
