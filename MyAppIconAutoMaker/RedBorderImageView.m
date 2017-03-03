@@ -6,6 +6,8 @@
 //  Copyright © 2015 AnarL. All rights reserved.
 //
 
+
+
 #import "RedBorderImageView.h"
 
 @implementation RedBorderImageView
@@ -45,14 +47,21 @@
     return YES;
 }
 
+- (void)setRoundCorner:(BOOL)roundCorner
+{
+    _roundCorner = roundCorner;
+    [self setNeedsDisplay:YES];
+}
+
 - (void)drawRect:(NSRect)dirtyRect {
     [super drawRect:dirtyRect];
     // Drawing code here.
-    
-    CGContextRef context = [[NSGraphicsContext currentContext] graphicsPort];
-    CGContextSetStrokeColorWithColor(context, [[NSColor redColor] CGColor]);
-    
-    CGContextStrokeRect(context, dirtyRect);
+
+    [[NSGraphicsContext currentContext] restoreGraphicsState];
+    NSBezierPath * bp = [self isRoundCorner] ? [NSBezierPath bezierPathWithRoundedRect:dirtyRect xRadius:NSWidth(dirtyRect) * CORNER_RADIUS_PERCENT yRadius:NSHeight(dirtyRect) * CORNER_RADIUS_PERCENT] : [NSBezierPath bezierPathWithRect:dirtyRect];
+    [[NSColor redColor] setStroke];
+    [bp stroke];
+    [[NSGraphicsContext currentContext] saveGraphicsState];
 }
 
 @end

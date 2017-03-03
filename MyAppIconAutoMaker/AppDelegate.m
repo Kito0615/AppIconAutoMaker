@@ -8,7 +8,9 @@
 
 #import "AppDelegate.h"
 
+#ifndef CORNER_RADIUS_PERCENT
 #define CORNER_RADIUS_PERCENT 0.2237
+#endif
 
 @interface AppDelegate ()
 
@@ -79,6 +81,7 @@
 }
 
 - (IBAction)roundedChecked:(NSButton *)sender {
+    [self.BigIcon setRoundCorner:[sender state]];
     if (sender.state) {
         self.BigIcon.layer.cornerRadius = CORNER_RADIUS_PERCENT * self.BigIcon.frame.size.width;
     }else {

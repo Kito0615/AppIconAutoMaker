@@ -7,7 +7,10 @@
 //
 
 #import <Cocoa/Cocoa.h>
+#define CORNER_RADIUS_PERCENT 0.125
 
 @interface RedBorderImageView : NSImageView
+
+@property (assign, nonatomic, getter=isRoundCorner) BOOL roundCorner;
 
 @end
