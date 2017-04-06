@@ -102,9 +102,21 @@
         
         return;
     } else {
-        [self generateIconsWithImage:self.BigIcon.image];
+        [self.platformSelection indexOfSelectedItem] == 6 ? [self generateScaleImage:self.BigIcon.image] : [self generateIconsWithImage:self.BigIcon.image];
     }
     
+}
+
+- (void)generateScaleImage:(NSImage *)image
+{
+    NSSize originSize = image.size;
+    NSSize scale1x = originSize;
+    NSSize scale2x = NSMakeSize(originSize.width * 2, originSize.height * 2);
+    NSSize scale3x = NSMakeSize(originSize.width * 3, originSize.height * 3);
+    
+    [self outputImage:image withSize:scale1x andName:@"Image.png" idiom:@"origin"];
+    [self outputImage:image withSize:scale2x andName:@"Image@2x.png" idiom:@"scale2x"];
+    [self outputImage:image withSize:scale3x andName:@"Image@3x.png" idiom:@"scale3x"];
 }
 
 - (void)generateIconsWithImage:(NSImage *)image
@@ -245,9 +257,6 @@
     if (range.location == NSNotFound) {
         
          [dict setObject:@"1x" forKey:@"scale"];
-        
-        
-        
     }else {
         
         NSString *scale = [name substringFromIndex:range.location+1];
@@ -255,7 +264,7 @@
  
     }
     
-    NSString *sizeString = [name substringFromIndex:5];
+    NSString *sizeString = name.length > 5 ? [name substringFromIndex:5] : @"";
     
     range = [sizeString rangeOfString:@"@"];
     if (range.location != NSNotFound) {

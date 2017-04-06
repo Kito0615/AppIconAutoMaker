@@ -11,12 +11,12 @@
 		7CF3281A1E1630FD000B9EFD /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7CF3281C1E1630FD000B9EFD /* InfoPlist.strings */; };
 		8AEB319D1C17D5D800C1D6F6 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AEB319C1C17D5D800C1D6F6 /* AppDelegate.m */; };
 		8AEB31A01C17D5D800C1D6F6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AEB319F1C17D5D800C1D6F6 /* main.m */; };
-		8AEB31A21C17D5D800C1D6F6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8AEB31A11C17D5D800C1D6F6 /* Assets.xcassets */; };
 		8AEB31A51C17D5D800C1D6F6 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8AEB31A31C17D5D800C1D6F6 /* MainMenu.xib */; };
 		8AEB31B01C17D5D800C1D6F6 /* MyAppIconAutoMakerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AEB31AF1C17D5D800C1D6F6 /* MyAppIconAutoMakerTests.m */; };
 		8AEB31BB1C17D5D800C1D6F6 /* MyAppIconAutoMakerUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AEB31BA1C17D5D800C1D6F6 /* MyAppIconAutoMakerUITests.m */; };
 		8AF927811C1FEB9F00566DE8 /* RedBorderImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AF927801C1FEB9F00566DE8 /* RedBorderImageView.m */; };
 		8AF927831C1FFA3900566DE8 /* SizeFile.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8AF927821C1FFA3900566DE8 /* SizeFile.plist */; };
+		99863D741E95F8BC00B3E777 /* AppIcon.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 99863D731E95F8BC00B3E777 /* AppIcon.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,7 +46,6 @@
 		8AEB319B1C17D5D800C1D6F6 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		8AEB319C1C17D5D800C1D6F6 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		8AEB319F1C17D5D800C1D6F6 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		8AEB31A11C17D5D800C1D6F6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8AEB31A41C17D5D800C1D6F6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		8AEB31A61C17D5D800C1D6F6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8AEB31AB1C17D5D800C1D6F6 /* MyAppIconAutoMakerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MyAppIconAutoMakerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -58,6 +57,7 @@
 		8AF9277F1C1FEB9F00566DE8 /* RedBorderImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RedBorderImageView.h; sourceTree = "<group>"; };
 		8AF927801C1FEB9F00566DE8 /* RedBorderImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RedBorderImageView.m; sourceTree = "<group>"; };
 		8AF927821C1FFA3900566DE8 /* SizeFile.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = SizeFile.plist; sourceTree = "<group>"; };
+		99863D731E95F8BC00B3E777 /* AppIcon.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = AppIcon.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +88,7 @@
 		8AEB318F1C17D5D800C1D6F6 = {
 			isa = PBXGroup;
 			children = (
+				99863D731E95F8BC00B3E777 /* AppIcon.xcassets */,
 				8AEB319A1C17D5D800C1D6F6 /* MyAppIconAutoMaker */,
 				8AEB31AE1C17D5D800C1D6F6 /* MyAppIconAutoMakerTests */,
 				8AEB31B91C17D5D800C1D6F6 /* MyAppIconAutoMakerUITests */,
@@ -113,7 +114,6 @@
 				8AF927821C1FFA3900566DE8 /* SizeFile.plist */,
 				8AEB319B1C17D5D800C1D6F6 /* AppDelegate.h */,
 				8AEB319C1C17D5D800C1D6F6 /* AppDelegate.m */,
-				8AEB31A11C17D5D800C1D6F6 /* Assets.xcassets */,
 				8AEB31A31C17D5D800C1D6F6 /* MainMenu.xib */,
 				8AEB31A61C17D5D800C1D6F6 /* Info.plist */,
 				8AEB319E1C17D5D800C1D6F6 /* Supporting Files */,
@@ -254,7 +254,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8AEB31A21C17D5D800C1D6F6 /* Assets.xcassets in Resources */,
+				99863D741E95F8BC00B3E777 /* AppIcon.xcassets in Resources */,
 				7CF328141E162E9C000B9EFD /* Localizable.strings in Resources */,
 				8AEB31A51C17D5D800C1D6F6 /* MainMenu.xib in Resources */,
 				8AF927831C1FFA3900566DE8 /* SizeFile.plist in Resources */,

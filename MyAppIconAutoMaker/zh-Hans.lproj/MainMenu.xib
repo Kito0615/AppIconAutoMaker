@@ -1,9 +1,10 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="9060" systemVersion="15E65" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="11762" systemVersion="16E195" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
         <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="9060"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="11762"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="NSApplication">
@@ -683,30 +684,27 @@
                 <rect key="frame" x="0.0" y="0.0" width="850" height="650"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3Lj-pr-gDe">
-                        <rect key="frame" x="173" y="601" width="504" height="29"/>
-                        <animations/>
-                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="将图片拖入下面红色方框中(最好是1024x1024)" id="Sdc-JK-7h0">
+                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="3Lj-pr-gDe">
+                        <rect key="frame" x="121" y="605" width="608" height="25"/>
+                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="将图片拖入下面红色方框中(生成图标最好是1024x1024)" id="Sdc-JK-7h0">
                             <font key="font" size="24" name=".PingFangSC-Regular"/>
                             <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
                     </textField>
-                    <imageView wantsLayer="YES" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YgO-Ow-x1C" customClass="RedBorderImageView">
-                        <rect key="frame" x="300" y="331" width="250" height="250"/>
+                    <imageView wantsLayer="YES" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="YgO-Ow-x1C" customClass="RedBorderImageView">
+                        <rect key="frame" x="300" y="335" width="250" height="250"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="250" id="Ava-Nw-WCw"/>
                             <constraint firstAttribute="width" secondItem="YgO-Ow-x1C" secondAttribute="height" multiplier="1:1" id="wco-zl-ekM"/>
                         </constraints>
-                        <animations/>
                         <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" id="iiU-dc-f6v"/>
                     </imageView>
-                    <comboBox verticalHuggingPriority="750" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="smy-og-ycD">
-                        <rect key="frame" x="435" y="244" width="118" height="26"/>
+                    <comboBox verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="smy-og-ycD">
+                        <rect key="frame" x="435" y="249" width="118" height="26"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="115" id="JL9-mc-n4y"/>
                         </constraints>
-                        <animations/>
                         <comboBoxCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" placeholderString="选择平台" drawsBackground="YES" completes="NO" numberOfVisibleItems="6" id="OGv-4H-9Na">
                             <font key="font" metaFont="system"/>
                             <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
@@ -717,6 +715,8 @@
                                 <string>iPhone+iPad</string>
                                 <string>Apple Watch</string>
                                 <string>Mac OS X</string>
+                                <string>iOS LaunchScreen</string>
+                                <string>ScaleImage</string>
                             </objectValues>
                         </comboBoxCell>
                         <connections>
@@ -725,7 +725,7 @@
                     </comboBox>
                     <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="i5W-kz-8Xw">
                         <rect key="frame" x="377" y="44" width="96" height="32"/>
-                        <animations/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <buttonCell key="cell" type="push" title="生成" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="uOe-8x-WTZ">
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                             <font key="font" metaFont="system"/>
@@ -736,7 +736,7 @@
                     </button>
                     <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="by2-0H-39m">
                         <rect key="frame" x="675" y="116" width="109" height="32"/>
-                        <animations/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <buttonCell key="cell" type="push" title="选择路径" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="QAg-O2-ZkQ">
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                             <font key="font" metaFont="system"/>
@@ -747,25 +747,23 @@
                     </button>
                     <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JdU-Px-nOG">
                         <rect key="frame" x="189" y="121" width="484" height="25"/>
-                        <animations/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="lrx-AA-5N3">
                             <font key="font" metaFont="system"/>
                             <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
                     </textField>
-                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7uA-u6-j1y">
-                        <rect key="frame" x="374" y="248" width="44" height="20"/>
-                        <animations/>
+                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="7uA-u6-j1y">
+                        <rect key="frame" x="374" y="253" width="41" height="19"/>
                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="平台" id="ObK-LX-Dr1">
                             <font key="font" size="18" name=".PingFangSC-Regular"/>
                             <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
                     </textField>
-                    <button hidden="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ly2-lK-x42">
-                        <rect key="frame" x="433" y="217" width="77" height="18"/>
-                        <animations/>
+                    <button hidden="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ly2-lK-x42">
+                        <rect key="frame" x="433" y="222" width="49" height="18"/>
                         <buttonCell key="cell" type="check" title="圆角" bezelStyle="regularSquare" imagePosition="left" inset="2" id="zO4-TW-Hc3">
                             <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                             <font key="font" metaFont="system"/>
@@ -776,7 +774,7 @@
                     </button>
                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="BTM-EL-HbI">
                         <rect key="frame" x="93" y="122" width="90" height="23"/>
-                        <animations/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="输出:" id="pPD-DM-Olw">
                             <font key="font" size="16" name=".PingFangSC-Regular"/>
                             <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -796,7 +794,6 @@
                     <constraint firstItem="Ly2-lK-x42" firstAttribute="leading" secondItem="smy-og-ycD" secondAttribute="leading" id="oOp-AH-39Z"/>
                     <constraint firstItem="3Lj-pr-gDe" firstAttribute="top" secondItem="bHN-By-Cj8" secondAttribute="top" constant="20" id="tPf-i5-rox"/>
                 </constraints>
-                <animations/>
             </view>
             <point key="canvasLocation" x="237" y="548"/>
         </window>

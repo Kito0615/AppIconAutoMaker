@@ -355,5 +355,13 @@
 			<string>Default-736@3x</string>
 		</dict>
 	</dict>
+	<dict>
+		<key>@1x</key>
+		<string></string>
+		<key>@2x</key>
+		<string></string>
+		<key>@3x</key>
+		<string></string>
+	</dict>
 </array>
 </plist>
