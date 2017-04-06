@@ -784,7 +784,7 @@
                         </connections>
                     </button>
                     <button hidden="YES" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sY8-Be-Ioj">
-                        <rect key="frame" x="433" y="217" width="135" height="18"/>
+                        <rect key="frame" x="433" y="217" width="152" height="18"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <buttonCell key="cell" type="check" title="Scale to @2x, @3x" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="tcc-1M-1b5">
                             <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
@@ -795,7 +795,7 @@
                         </connections>
                     </button>
                     <button hidden="YES" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sDX-C8-vWd">
-                        <rect key="frame" x="433" y="197" width="133" height="18"/>
+                        <rect key="frame" x="433" y="197" width="152" height="18"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <buttonCell key="cell" type="check" title="Scale to @2x, @1x" bezelStyle="regularSquare" imagePosition="left" inset="2" id="JcJ-Qe-ETA">
                             <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>

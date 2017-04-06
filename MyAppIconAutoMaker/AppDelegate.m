@@ -143,9 +143,9 @@ NSLog(@"-------\n"); \
     NSSize scale2x = NSMakeSize(originSize.width * 2, originSize.height * 2);
     NSSize scale3x = NSMakeSize(originSize.width * 3, originSize.height * 3);
     
-    [self outputImage:image withSize:scale1x andName:@"Image.png" idiom:@"origin"];
-    [self outputImage:image withSize:scale2x andName:@"Image@2x.png" idiom:@"scale2x"];
-    [self outputImage:image withSize:scale3x andName:@"Image@3x.png" idiom:@"scale3x"];
+    [self outputImage:image withSize:scale1x andName:@"Image" idiom:@"origin"];
+    [self outputImage:image withSize:scale2x andName:@"Image@2x" idiom:@"scale2x"];
+    [self outputImage:image withSize:scale3x andName:@"Image@3x" idiom:@"scale3x"];
 }
 
 - (void)generateIconsWithImage:(NSImage *)image
@@ -274,7 +274,7 @@ NSLog(@"-------\n"); \
     
     NSData * outputData = [[NSBitmapImageRep imageRepWithData:imageData] representationUsingType:NSPNGFileType properties:@{}];
     
-    NSString * filePath = [[[self appiconsetPathString] stringByReplacingPercentEscapesUsingEncoding:NSUTF8StringEncoding] stringByAppendingPathComponent:[NSString stringWithFormat:@"%@.png", name]];
+    NSString * filePath = [[[self encodingPathString] stringByReplacingPercentEscapesUsingEncoding:NSUTF8StringEncoding] stringByAppendingPathComponent:[NSString stringWithFormat:@"%@.png", name]];
     
     [outputData writeToFile:filePath atomically:YES];
     
