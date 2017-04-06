@@ -12,6 +12,22 @@
 #define CORNER_RADIUS_PERCENT 0.2237
 #endif
 
+#ifdef DEBUG
+
+#define LLog(format, ...) do { \
+NSLog(@"<%s : %d> %s\n", \
+    [[[NSString stringWithUTF8String:__FILE__] lastPathComponent] UTF8String], \
+    __LINE__, __func__); \
+NSLog(format, ##__VA_ARGS__); \
+NSLog(@"-------\n"); \
+} while (0)
+
+#else
+#define LLog(format, ...) do{ \
+} while(0)
+#endif
+
+
 @interface AppDelegate ()
 
 @property (weak) IBOutlet NSWindow *window;
@@ -73,11 +89,23 @@
     }];
 }
 
+- (IBAction)zoomCheck:(id)sender {
+    if (sender == self.zoomInCheckButton) {
+        self.zoomOutCheckButton.state = NSOffState;
+    } else {
+        self.zoomInCheckButton.state = NSOffState;
+    }
+    [sender setState:NSOnState];
+}
+
 - (IBAction)platformSelected:(NSComboBox *)sender {
-    NSLog(@"platform selected index:%ld", (long)sender.indexOfSelectedItem);
+    LLog(@"platform selected index:%ld", (long)sender.indexOfSelectedItem);
     [self.roundedCheckButton setHidden:!(sender.indexOfSelectedItem == 4)];
     self.roundedCheckButton.state = 0;
     self.BigIcon.layer.cornerRadius = 0;
+    BOOL scale = sender.indexOfSelectedItem == 6;
+    self.zoomInCheckButton.hidden = !scale;
+    self.zoomOutCheckButton.hidden = !scale;
 }
 
 - (IBAction)roundedChecked:(NSButton *)sender {
@@ -109,7 +137,8 @@
 
 - (void)generateScaleImage:(NSImage *)image
 {
-    NSSize originSize = image.size;
+    BOOL zoomIn = self.zoomInCheckButton.state;
+    NSSize originSize = zoomIn ? image.size : NSMakeSize(image.size.width / 3, image.size.height / 3);
     NSSize scale1x = originSize;
     NSSize scale2x = NSMakeSize(originSize.width * 2, originSize.height * 2);
     NSSize scale3x = NSMakeSize(originSize.width * 3, originSize.height * 3);
@@ -146,20 +175,20 @@
     
     NSArray * iOSLaunchSizeKeys = [iOSLaunchImageDict allKeys];
     
-    NSLog(@"%ld", self.platformSelection.indexOfSelectedItem);
+    LLog(@"%ld", self.platformSelection.indexOfSelectedItem);
     
-    NSLog(@"pathFiled: %@", [self encodingPathString]);
+    LLog(@"pathFiled: %@", [self encodingPathString]);
     
     NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"file://%@", [self encodingPathString]]];
     
-    NSLog(@"url %@", url);
+    LLog(@"url %@", url);
     
     NSError *error;
     
     [[NSFileManager defaultManager] createDirectoryAtURL:[self appiconsetPath] withIntermediateDirectories:YES attributes:nil error:&error];
     
     if (error) {
-        NSLog(@"创建文件夹错误：%@", error.description);
+        LLog(@"创建文件夹错误：%@", error.description);
     }
     
     self.contents = [NSMutableDictionary dictionary];
@@ -195,14 +224,14 @@
     
     
     
-    NSLog(@"contents: %@", self.contents);
+    LLog(@"contents: %@", self.contents);
     
     NSData *jsonData = [NSJSONSerialization dataWithJSONObject:self.contents
                                                        options:NSJSONWritingPrettyPrinted // Pass 0 if you don't care about the readability of the generated string
                                                          error:&error];
     
     if (! jsonData) {
-        NSLog(@"Got an error: %@", error);
+        LLog(@"Got an error: %@", error);
     } else {
         NSString *jsonString = [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
         NSString *fileName = [NSString stringWithFormat:@"%@/Contents.json",
@@ -232,7 +261,7 @@
         
     }
     
-    NSLog(@"%@", [NSString stringWithFormat:@"file://%@", [self encodingPathString]]);
+    LLog(@"%@", [NSString stringWithFormat:@"file://%@", [self encodingPathString]]);
     
     [[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:[NSString stringWithFormat:@"file://%@", [self encodingPathString]]]];
     
@@ -253,7 +282,7 @@
     [dict setObject:idiom forKey:@"idiom"];
     
     NSRange range = [name rangeOfString:@"@"];
-    NSLog(@"range %lu", (unsigned long)range.location);
+    LLog(@"range %lu", (unsigned long)range.location);
     if (range.location == NSNotFound) {
         
          [dict setObject:@"1x" forKey:@"scale"];

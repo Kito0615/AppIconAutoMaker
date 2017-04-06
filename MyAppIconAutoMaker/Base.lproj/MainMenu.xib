@@ -21,6 +21,8 @@
                 <outlet property="platformSelection" destination="smy-og-ycD" id="KmD-eJ-UFY"/>
                 <outlet property="roundedCheckButton" destination="Ly2-lK-x42" id="mOb-VI-nST"/>
                 <outlet property="window" destination="WVw-lC-8Wo" id="gab-ch-tO1"/>
+                <outlet property="zoomInCheckButton" destination="sY8-Be-Ioj" id="8gl-9p-3gZ"/>
+                <outlet property="zoomOutCheckButton" destination="sDX-C8-vWd" id="Enu-GA-emF"/>
             </connections>
         </customObject>
         <customObject id="YLy-65-1bz" customClass="NSFontManager"/>
@@ -779,6 +781,28 @@
                         </buttonCell>
                         <connections>
                             <action selector="roundedChecked:" target="Voe-Tx-rLC" id="940-Zx-gZc"/>
+                        </connections>
+                    </button>
+                    <button hidden="YES" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sY8-Be-Ioj">
+                        <rect key="frame" x="433" y="217" width="135" height="18"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <buttonCell key="cell" type="check" title="Scale to @2x, @3x" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="tcc-1M-1b5">
+                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                            <font key="font" metaFont="system"/>
+                        </buttonCell>
+                        <connections>
+                            <action selector="zoomCheck:" target="Voe-Tx-rLC" id="jxV-IF-LMJ"/>
+                        </connections>
+                    </button>
+                    <button hidden="YES" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sDX-C8-vWd">
+                        <rect key="frame" x="433" y="197" width="133" height="18"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <buttonCell key="cell" type="check" title="Scale to @2x, @1x" bezelStyle="regularSquare" imagePosition="left" inset="2" id="JcJ-Qe-ETA">
+                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                            <font key="font" metaFont="system"/>
+                        </buttonCell>
+                        <connections>
+                            <action selector="zoomCheck:" target="Voe-Tx-rLC" id="5sc-Tk-0pM"/>
                         </connections>
                     </button>
                 </subviews>

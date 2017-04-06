@@ -19,8 +19,13 @@
 @property (weak) IBOutlet RedBorderImageView *BigIcon;
 @property (weak) IBOutlet NSTextField *pathFiled;
 @property (weak) IBOutlet NSButton *roundedCheckButton;
+@property (weak) IBOutlet NSButton *zoomInCheckButton;
+@property (weak) IBOutlet NSButton *zoomOutCheckButton;
+
+
 
 - (IBAction)Generate:(NSButton *)sender;
 - (IBAction)selectSavePath:(NSButton *)sender;
+- (IBAction)zoomCheck:(id)sender;
 @end
 
