@@ -69,7 +69,7 @@ NSLog(@"-------\n"); \
 }
 
 -(NSURL *)appiconsetPath {
-    return [NSURL URLWithString:[NSString stringWithFormat:@"file://%@", [self appiconsetPathString]]];
+    return [NSURL fileURLWithPath:[self appiconsetPathString]];
 }
 
 - (IBAction)selectSavePath:(NSButton *)sender {
@@ -143,9 +143,19 @@ NSLog(@"-------\n"); \
     NSSize scale2x = NSMakeSize(originSize.width * 2, originSize.height * 2);
     NSSize scale3x = NSMakeSize(originSize.width * 3, originSize.height * 3);
     
+    NSError *error;
+    
+    [[NSFileManager defaultManager] createDirectoryAtURL:[self appiconsetPath] withIntermediateDirectories:YES attributes:nil error:&error];
+    
+    if (error) {
+        LLog(@"创建文件夹错误：%@", error.description);
+    }
+    
     [self outputImage:image withSize:scale1x andName:@"Image" idiom:@"origin"];
     [self outputImage:image withSize:scale2x andName:@"Image@2x" idiom:@"scale2x"];
     [self outputImage:image withSize:scale3x andName:@"Image@3x" idiom:@"scale3x"];
+    
+    [[NSWorkspace sharedWorkspace] openURL:[NSURL fileURLWithPath:[self encodingPathString]]];
 }
 
 - (void)generateIconsWithImage:(NSImage *)image
@@ -179,7 +189,7 @@ NSLog(@"-------\n"); \
     
     LLog(@"pathFiled: %@", [self encodingPathString]);
     
-    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"file://%@", [self encodingPathString]]];
+    NSURL *url = [NSURL fileURLWithPath:[self encodingPathString]];
     
     LLog(@"url %@", url);
     
@@ -263,7 +273,7 @@ NSLog(@"-------\n"); \
     
     LLog(@"%@", [NSString stringWithFormat:@"file://%@", [self encodingPathString]]);
     
-    [[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:[NSString stringWithFormat:@"file://%@", [self encodingPathString]]]];
+    [[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:[self encodingPathString]]];
     
 }
 
@@ -274,7 +284,7 @@ NSLog(@"-------\n"); \
     
     NSData * outputData = [[NSBitmapImageRep imageRepWithData:imageData] representationUsingType:NSPNGFileType properties:@{}];
     
-    NSString * filePath = [[[self encodingPathString] stringByReplacingPercentEscapesUsingEncoding:NSUTF8StringEncoding] stringByAppendingPathComponent:[NSString stringWithFormat:@"%@.png", name]];
+    NSString * filePath = [[[self appiconsetPathString] stringByReplacingPercentEscapesUsingEncoding:NSUTF8StringEncoding] stringByAppendingPathComponent:[NSString stringWithFormat:@"%@.png", name]];
     
     [outputData writeToFile:filePath atomically:YES];
     
