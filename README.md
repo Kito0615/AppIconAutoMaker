@@ -32,6 +32,6 @@ Add Scale Image to generate @2x, @3x images or use image@3x to generate @2x, @1x
 
 ######PS.
 
-[BaiduYun.com](https://pan.baidu.com/s/1c1JSgXq) DMG download link:
+[BaiduYun.com](https://pan.baidu.com/s/1eS66Z9S) DMG download link:
 
-[AppIconAutoMaker](https://pan.baidu.com/s/1c1JSgXq) PASSWORD:(pci9)
+[AppIconAutoMaker](https://pan.baidu.com/s/1eS66Z9S) PASSWORD:(x181)

@@ -61,7 +61,7 @@ NSLog(@"-------\n"); \
 }
 
 -(NSString *)encodingPathString {
-    return [self.pathFiled.stringValue stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+    return [self.pathFiled stringValue];
 }
 
 -(NSString *)appiconsetPathString {
@@ -77,7 +77,7 @@ NSLog(@"-------\n"); \
     _openPanel = [NSOpenPanel openPanel];
     _openPanel.canChooseFiles = NO;
     _openPanel.canChooseDirectories = YES;
-    _openPanel.directoryURL = [NSURL URLWithString:NSHomeDirectory()];
+    _openPanel.directoryURL = [NSURL fileURLWithPath:NSHomeDirectory()];
     _openPanel.allowsMultipleSelection = NO;
     [_openPanel beginSheetModalForWindow:self.window completionHandler:^(NSInteger result) {
         if (result == NSOKButton) {
@@ -273,7 +273,7 @@ NSLog(@"-------\n"); \
     
     LLog(@"%@", [NSString stringWithFormat:@"file://%@", [self encodingPathString]]);
     
-    [[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:[self encodingPathString]]];
+    [[NSWorkspace sharedWorkspace] openURL:[NSURL fileURLWithPath:[self encodingPathString]]];
     
 }
 
