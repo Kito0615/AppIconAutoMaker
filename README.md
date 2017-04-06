@@ -26,3 +26,12 @@ Add support of iOS(iPhone/iPad) launch images.
 
 ####11/05/2016 Update:
 Add Support of Apple Watch.
+
+####06/04/2017 Update:
+Add Scale Image to generate @2x, @3x images or use image@3x to generate @2x, @1x images.
+
+######PS.
+
+(BaiduYun.com)[http://yun.baidu.com] DMG download link:
+
+(AppIconAutoMaker)[https://pan.baidu.com/s/1nv5CN1n] PASSWORD:(n99s)
