@@ -1,4 +1,4 @@
-# AppIconAutoMaker
+# AppIconAutoMaker [![star this repo](http://github-svg-buttons.herokuapp.com/star.svg?user=ianisme&repo=IanStartAdsView&style=flat&background=1081C1)](https://github.com/Kito0615/AppIconAutoMaker/star) [![fork this repo](http://github-svg-buttons.herokuapp.com/fork.svg?user=ianisme&repo=IanStartAdsView&style=flat&background=1081C1)](https://github.com/Kito0615/AppIconAutoMaker/fork)
 ### Use this app you can create iPhone/iPad/MAC icons faster.
 
 ##### 1.First, you should drag an image which size prefer to be 1024x1024, because you should upload an ArtWork in this size to iTunesconnect.
