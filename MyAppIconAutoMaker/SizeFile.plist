@@ -354,6 +354,13 @@
 			<key>Name</key>
 			<string>Default-736@3x</string>
 		</dict>
+		<key>iPhoneX Portrait</key>
+		<dict>
+			<key>Dimensions</key>
+			<string>{1125,2436}</string>
+			<key>Name</key>
+			<string>Default-812@3x</string>
+		</dict>
 	</dict>
 	<dict>
 		<key>@1x</key>

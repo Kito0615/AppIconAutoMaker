@@ -65,6 +65,9 @@ NSLog(@"-------\n"); \
 }
 
 -(NSString *)appiconsetPathString {
+    if ([self.platformSelection indexOfSelectedItem] == 6) {
+        return [self encodingPathString];
+    }
     return [[self encodingPathString] stringByAppendingString:@"/AppIcon.appiconset"];
 }
 
@@ -189,7 +192,7 @@ NSLog(@"-------\n"); \
     
     LLog(@"pathFiled: %@", [self encodingPathString]);
     
-    NSURL *url = [NSURL fileURLWithPath:[self encodingPathString]];
+    NSURL * url = [NSURL fileURLWithPath:[self encodingPathString]];
     
     LLog(@"url %@", url);
     
