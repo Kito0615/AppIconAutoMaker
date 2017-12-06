@@ -25,13 +25,19 @@ Add supoort of iPhone6/6s+ icons.
 Add support of iOS(iPhone/iPad) launch images.
 
 #### 11/05/2016 Update:
+
 Add Support of Apple Watch.
 
 #### 06/04/2017 Update:
+
 Add Scale Image to generate @2x, @3x images or use image@3x to generate @2x, @1x images.
+
+#### 12/06/2017 Update:
+
+Add Launch Screen Image support of iPhone X.
 
 ###### PS.
 
-[BaiduYun.com](https://pan.baidu.com/s/1eS66Z9S) DMG download link:
+[BaiduYun.com](https://pan.baidu.com/s/1kUPqZkF) DMG download link:
 
-[AppIconAutoMaker](https://pan.baidu.com/s/1eS66Z9S) PASSWORD:(x181)
+[AppIconAutoMaker](https://pan.baidu.com/s/1kUPqZkF) PASSWORD:(jhxw)
