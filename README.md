@@ -35,9 +35,3 @@ Add Scale Image to generate @2x, @3x images or use image@3x to generate @2x, @1x
 #### 12/06/2017 Update:
 
 Add Launch Screen Image support of iPhone X.
-
-###### PS.
-
-[BaiduYun.com](https://pan.baidu.com/s/1kUPqZkF) DMG download link:
-
-[AppIconAutoMaker](https://pan.baidu.com/s/1kUPqZkF) PASSWORD:(jhxw)
