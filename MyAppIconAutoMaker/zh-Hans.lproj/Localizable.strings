@@ -7,3 +7,11 @@
 */
 
 "Alert" = "请将图片拖入红框中或选择生成图标的平台。";
+"Drag Image Into Red View(1024x1024 best for icon)"="请将图片拖入下面的红框中（最好是1024x1024的图片）";
+"Platform"="平台";
+"Output To:"="输出目录:";
+"Scale to @2x, @1x"="缩放大小 @2x, @1x";
+"Scale to @2x, @3x"="缩放大小 @2x, @3x";
+"Select Path"="选择目录";
+"Generate"="生成图片";
+"Rounded"="生成圆角";

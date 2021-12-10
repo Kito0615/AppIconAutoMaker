@@ -42,6 +42,7 @@
 		04E2DD942762FBA600B9CF7D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		04E2DD952762FBBD00B9CF7D /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		04E2DD962762FBBD00B9CF7D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		04E2DDA1276308CC00B9CF7D /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = "zh-Hans"; path = "zh-Hans.lproj/MainMenu.xib"; sourceTree = "<group>"; };
 		7CF328171E162E9D000B9EFD /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		7CF3281D1E163101000B9EFD /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
 		8AEB31981C17D5D800C1D6F6 /* MyAppIconAutoMaker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyAppIconAutoMaker.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -345,6 +346,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				04E2DD952762FBBD00B9CF7D /* en */,
+				04E2DDA1276308CC00B9CF7D /* zh-Hans */,
 			);
 			name = MainMenu.xib;
 			sourceTree = "<group>";

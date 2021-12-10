@@ -7,3 +7,11 @@
 */
 
 "Alert" = "Please drag an image into the Red Border View Or select a platform.";
+"Drag Image Into Red View(1024x1024 best for icon)"="Drag Image Into Red View(1024x1024 best for icon)";
+"Platform"="Platform";
+"Output To:"="Output To:";
+"Scale to @2x, @1x"="Scale to @2x, @1x";
+"Scale to @2x, @3x"="Scale to @2x, @3x";
+"Select Path"="Select Path";
+"Generate"="Generate";
+"Rounded"="Rounded";
