@@ -35,3 +35,7 @@ Add Scale Image to generate @2x, @3x images or use image@3x to generate @2x, @1x
 #### 12/06/2017 Update:
 
 Add Launch Screen Image support of iPhone X.
+
+#### 12/12/2021 Update:
+Update methods for generate images.
+XCode Version ≥ 12.4. Minimum OS Version ≥ MacOS 10.13.
