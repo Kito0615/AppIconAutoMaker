@@ -27,8 +27,21 @@ NSLog(@"-------\n"); \
 } while(0)
 #endif
 
+typedef enum {
+    APPLE_PLATFORM_LAUNCH_SCREEN = 0,
+    APPLE_PLATFORM_IPHONE = 1,
+    APPLE_PLATFORM_IPAD = 1 << 1,
+    APPLE_PLATFORM_MAC = 1 << 2,
+    APPLE_PLATFORM_WATCH = 1 << 3,
+    APPLE_PLATFORM_CARPLAY = 1 << 4,
+    APPLE_PLATFORM_SCALE = 1 << 5,
+}APPLE_PLATFORM;
+
 
 @interface AppDelegate ()
+{
+    APPLE_PLATFORM _platform;
+}
 
 @property (weak) IBOutlet NSWindow *window;
 
@@ -49,6 +62,7 @@ NSLog(@"-------\n"); \
         self.pathFiled.stringValue = [[NSUserDefaults standardUserDefaults] objectForKey:@"savePath"];
     }
     [self.platformSelection selectItemAtIndex:0];
+    [self.window setTitlebarAppearsTransparent:YES];
 
 }
 - (void)applicationWillTerminate:(NSNotification *)aNotification {
@@ -77,19 +91,16 @@ NSLog(@"-------\n"); \
 
 - (IBAction)selectSavePath:(NSButton *)sender {
     
-    _openPanel = [NSOpenPanel openPanel];
+    NSOpenPanel * _openPanel = [NSOpenPanel openPanel];
     _openPanel.canChooseFiles = NO;
     _openPanel.canChooseDirectories = YES;
     _openPanel.directoryURL = [NSURL fileURLWithPath:NSHomeDirectory()];
     _openPanel.allowsMultipleSelection = NO;
-    [_openPanel beginSheetModalForWindow:self.window completionHandler:^(NSInteger result) {
-        if (result == NSOKButton) {
-            self.pathFiled.stringValue = [[[_openPanel URLs] objectAtIndex:0] path];
-        }
+    NSInteger result = [_openPanel runModal];
+    if (result == NSModalResponseOK) {
+        self.pathFiled.stringValue = [[[_openPanel URLs] objectAtIndex:0] path];
         [[NSUserDefaults standardUserDefaults] setObject:[[[_openPanel URLs] objectAtIndex:0] path] forKey:@"savePath"];
-        
-        
-    }];
+    }
 }
 
 - (IBAction)zoomCheck:(id)sender {
@@ -103,10 +114,52 @@ NSLog(@"-------\n"); \
 
 - (IBAction)platformSelected:(NSComboBox *)sender {
     LLog(@"platform selected index:%ld", (long)sender.indexOfSelectedItem);
-    [self.roundedCheckButton setHidden:!(sender.indexOfSelectedItem == 4)];
+    switch (sender.indexOfSelectedItem) {
+        case 0:
+        {
+            _platform = APPLE_PLATFORM_IPHONE;
+        }
+            break;
+        case 1:
+        {
+            _platform = APPLE_PLATFORM_IPAD;
+        }
+            break;
+        case 2:
+        {
+            _platform = APPLE_PLATFORM_IPHONE | APPLE_PLATFORM_IPAD;
+        }
+            break;
+        case 3:
+        {
+            _platform = APPLE_PLATFORM_WATCH;
+        }
+            break;
+        case 4:
+        {
+            _platform = APPLE_PLATFORM_MAC;
+        }
+            break;
+        case 5:
+        {
+            _platform = APPLE_PLATFORM_LAUNCH_SCREEN;
+        }
+            break;
+        case 7:
+        {
+            _platform = APPLE_PLATFORM_CARPLAY;
+        }
+            break;
+        case 6:
+        {
+            _platform = APPLE_PLATFORM_SCALE;
+        }
+            break;
+    }
+    [self.roundedCheckButton setHidden:!(_platform == APPLE_PLATFORM_MAC)];
     self.roundedCheckButton.state = 0;
     self.BigIcon.layer.cornerRadius = 0;
-    BOOL scale = sender.indexOfSelectedItem == 6;
+    BOOL scale = _platform == APPLE_PLATFORM_SCALE;
     self.zoomInCheckButton.hidden = !scale;
     self.zoomOutCheckButton.hidden = !scale;
 }
@@ -124,18 +177,17 @@ NSLog(@"-------\n"); \
     
     if (!self.BigIcon.image || self.platformSelection.indexOfSelectedItem == -1) {
         
-        NSAlert * alert = [NSAlert alertWithMessageText:NSLocalizedString(@"Alert", nil) defaultButton:@"OK" alternateButton:nil otherButton:nil informativeTextWithFormat:@""];
-        alert.alertStyle = NSWarningAlertStyle;
-        
-        [alert beginSheetModalForWindow:self.window completionHandler:^(NSModalResponse returnCode) {
-            
-        }];
+        NSAlert * alert = [[NSAlert alloc] init];
+        [alert setMessageText:NSLocalizedString(@"Alert", nil)];
+        [alert addButtonWithTitle:@"OK"];
+        alert.alertStyle = NSAlertStyleWarning;
+        [alert runModal];
         
         return;
     } else {
-        [self.platformSelection indexOfSelectedItem] == 6 ? [self generateScaleImage:self.BigIcon.image] : [self generateIconsWithImage:self.BigIcon.image];
+        _platform == APPLE_PLATFORM_SCALE ? [self generateScaleImage:self.BigIcon.image] : [self generateIconsWithImage:self.BigIcon.image platform:_platform];
     }
-    
+    [[NSWorkspace sharedWorkspace] openURL:[NSURL fileURLWithPath:[self encodingPathString]]];
 }
 
 - (void)generateScaleImage:(NSImage *)image
@@ -154,35 +206,58 @@ NSLog(@"-------\n"); \
         LLog(@"创建文件夹错误：%@", error.description);
     }
     
-    [self outputImage:image withSize:scale1x andName:@"Image" idiom:@"origin"];
-    [self outputImage:image withSize:scale2x andName:@"Image@2x" idiom:@"scale2x"];
-    [self outputImage:image withSize:scale3x andName:@"Image@3x" idiom:@"scale3x"];
-    
-    [[NSWorkspace sharedWorkspace] openURL:[NSURL fileURLWithPath:[self encodingPathString]]];
+    [self outputImage:image withSize:scale1x scale:1 name:@"Image" idiom:@"origin"];
+    [self outputImage:image withSize:scale2x scale:2 name:@"Image@2x" idiom:@"scale2x"];
+    [self outputImage:image withSize:scale3x scale:3 name:@"Image@3x" idiom:@"scale3x"];
 }
 
-- (void)generateIconsWithImage:(NSImage *)image
+#define APPLE_PLATFORM_IPHONE_KEY @"iphone"
+#define APPLE_PLATFORM_IPAD_KEY @"ipad"
+#define APPLE_PLATFORM_WATCH_KEY @"watch"
+#define APPLE_PLATFORM_MAC_KEY @"mac"
+#define APPLE_PLATFORM_CAR_KEY @"car"
+#define APPLE_PLATFORM_SCALE_1 @"1x"
+#define APPLE_PLATFORM_SCALE_2 @"2x"
+#define APPLE_PLATFORM_SCALE_3 @"3x"
+
+- (NSArray *)sizeArrayWithPlatformName:(APPLE_PLATFORM)platform
+{
+    NSString * jsonFile = [[NSBundle mainBundle] pathForResource:@"Template" ofType:@"json"];
+    NSDictionary * jsonData = [NSJSONSerialization JSONObjectWithData:[NSData dataWithContentsOfFile:jsonFile] options:NSJSONReadingMutableContainers error:nil];
+    NSArray * imageScaleSizeArray = [jsonData objectForKey:@"images"];
+    NSMutableArray * resultArray = [NSMutableArray array];
+    NSMutableArray * keyArray = [NSMutableArray array];
+    if (platform & APPLE_PLATFORM_IPHONE) {
+        [keyArray addObject:APPLE_PLATFORM_IPHONE_KEY];
+    }
+    if (platform & APPLE_PLATFORM_MAC) {
+        [keyArray addObject:APPLE_PLATFORM_MAC_KEY];
+    }
+    if (platform & APPLE_PLATFORM_IPAD) {
+        [keyArray addObject:APPLE_PLATFORM_IPAD_KEY];
+    }
+    if (platform & APPLE_PLATFORM_WATCH) {
+        [keyArray addObject:APPLE_PLATFORM_WATCH_KEY];
+    }
+    if (platform & APPLE_PLATFORM_CARPLAY) {
+        [keyArray addObject:APPLE_PLATFORM_CAR_KEY];
+    }
+    for (NSDictionary * imageDict in imageScaleSizeArray) {
+        if ([keyArray containsObject:[imageDict objectForKey:@"idiom"]]) {
+            [resultArray addObject:imageDict];
+        }
+    }
+    return [NSArray arrayWithArray:resultArray];
+}
+
+- (void)generateIconsWithImage:(NSImage *)image platform:(APPLE_PLATFORM)platform
 {
     
     NSString * plistPath = [[NSBundle mainBundle] pathForResource:@"SizeFile.plist" ofType:nil];
     
     NSArray * sizeArr = [[NSArray alloc] initWithContentsOfFile:plistPath];
     
-    NSDictionary * iPhoneSizeDict = sizeArr[0];
-    
-    NSArray * iPhoneSizeKeys = [iPhoneSizeDict allKeys];
-    
-    NSDictionary * iPadSizeDict = sizeArr[1];
-    
-    NSArray * iPadSizeKeys = [iPadSizeDict allKeys];
-    
-    NSDictionary * appleWatchDict = sizeArr[2];
-    
-    NSArray * appleWatchSizeKeys = [appleWatchDict allKeys];
-    
-    NSDictionary * macOSXSizeDict = sizeArr[3];
-    
-    NSArray * macOSXSizeKeys = [macOSXSizeDict allKeys];
+    NSArray * iconSizeArray = [self sizeArrayWithPlatformName:platform];
     
     NSDictionary * iOSLaunchImageDict = sizeArr[4];
     
@@ -206,30 +281,27 @@ NSLog(@"-------\n"); \
     
     self.contents = [NSMutableDictionary dictionary];
     self.images = [NSMutableArray array];
-    NSMutableDictionary *info = [NSMutableDictionary dictionaryWithObject:@"xcode" forKey:@"author"];
+    NSMutableDictionary *info = [NSMutableDictionary dictionaryWithObject:@"MyAppIconAutoGenerator" forKey:@"author"];
     [info setObject:@1 forKey:@"version"];
     [self.contents setObject:info forKey:@"info"];
     
     switch (self.platformSelection.indexOfSelectedItem) {
-        case 0:
-            [self outputImage:image InfoDict:iPhoneSizeDict keysArr:iPhoneSizeKeys idiom:@"iphone"];
-            break;
-        case 1:
-            [self outputImage:image InfoDict:iPadSizeDict keysArr:iPadSizeKeys idiom:@"ipad"];
-            break;
-        case 2:
-            [self outputImage:image InfoDict:iPhoneSizeDict keysArr:iPhoneSizeKeys idiom:@"iphone"];
-            [self outputImage:image InfoDict:iPadSizeDict keysArr:iPadSizeKeys idiom:@"ipad"];
-            break;
-        case 3:
-            [self outputImage:image InfoDict:appleWatchDict keysArr:appleWatchSizeKeys idiom:@"watch"];
-            break;
-        case 4:
-            [self outputImage:image InfoDict:macOSXSizeDict keysArr:macOSXSizeKeys idiom:@"mac"];
-            break;
         case 5:
             [self outputImage:image InfoDict:iOSLaunchImageDict keysArr:iOSLaunchSizeKeys idiom:@"iphone"];
         default:
+        {
+            for (NSDictionary * imgInfo in iconSizeArray) {
+                NSString * sizeString = [imgInfo objectForKey:@"size"];
+                NSString * scaleString = [imgInfo objectForKey:@"scale"];
+                NSInteger multiplyLoc = [sizeString rangeOfString:@"x"].location;
+                NSInteger scaleValue = [[scaleString substringToIndex:1] integerValue];
+                if (multiplyLoc != NSNotFound) {
+                    NSString * imgName = [@"icon_" stringByAppendingFormat:@"%@@%@", sizeString, scaleString];
+                    NSSize imgSize = NSMakeSize([[sizeString substringToIndex:multiplyLoc] doubleValue], [[sizeString substringFromIndex:multiplyLoc+1] doubleValue]);
+                    [self outputImage:image withSize:imgSize scale:scaleValue name:imgName idiom:[imgInfo objectForKey:@"idiom"]];
+                }
+            }
+        }
             break;
     }
     
@@ -248,7 +320,7 @@ NSLog(@"-------\n"); \
     } else {
         NSString *jsonString = [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
         NSString *fileName = [NSString stringWithFormat:@"%@/Contents.json",
-                              [[self appiconsetPathString] stringByReplacingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
+                              [[self appiconsetPathString] stringByRemovingPercentEncoding]];
         [jsonString writeToFile:fileName atomically:NO encoding:NSStringEncodingConversionAllowLossy error:nil];
     }
     
@@ -270,48 +342,30 @@ NSLog(@"-------\n"); \
         
         NSString * iconName = [iconInfoDict objectForKey:@"Name"];
         
-        [self outputImage:image withSize:CGSizeMake(iconSize.width / scale, iconSize.height / scale) andName:iconName idiom:idiom];
+        [self outputImage:image withSize:iconSize scale:scale name:iconName idiom:idiom];
         
     }
     
     LLog(@"%@", [NSString stringWithFormat:@"file://%@", [self encodingPathString]]);
-    
-    [[NSWorkspace sharedWorkspace] openURL:[NSURL fileURLWithPath:[self encodingPathString]]];
-    
 }
 
 
-- (void)outputImage:(NSImage *)image withSize:(NSSize)size andName:(NSString *)name idiom:(NSString *)idiom
+- (void)outputImage:(NSImage *)image withSize:(NSSize)originSize scale:(NSInteger)scale name:(NSString *)name idiom:(NSString *)idiom
 {
-    NSData * imageData = [[self drawImage:image withSize:size] TIFFRepresentation];
+    NSData * imageData = [[self drawImage:image withSize:NSMakeSize(originSize.width * scale, originSize.height * scale)] TIFFRepresentation];
     
     NSData * outputData = [[NSBitmapImageRep imageRepWithData:imageData] representationUsingType:NSPNGFileType properties:@{}];
     
-    NSString * filePath = [[[self appiconsetPathString] stringByReplacingPercentEscapesUsingEncoding:NSUTF8StringEncoding] stringByAppendingPathComponent:[NSString stringWithFormat:@"%@.png", name]];
+    NSString * filePath = [[[self appiconsetPathString] stringByRemovingPercentEncoding] stringByAppendingPathComponent:[NSString stringWithFormat:@"%@.png", name]];
     
     [outputData writeToFile:filePath atomically:YES];
     
     NSMutableDictionary *dict = [NSMutableDictionary dictionaryWithObject:[NSString stringWithFormat:@"%@.png", name] forKey:@"filename"];
     [dict setObject:idiom forKey:@"idiom"];
     
-    NSRange range = [name rangeOfString:@"@"];
-    LLog(@"range %lu", (unsigned long)range.location);
-    if (range.location == NSNotFound) {
-        
-         [dict setObject:@"1x" forKey:@"scale"];
-    }else {
-        
-        NSString *scale = [name substringFromIndex:range.location+1];
-        [dict setObject:scale forKey:@"scale"];
- 
-    }
+    [dict setObject:[NSNumber numberWithInteger:scale] forKey:@"scale"];
     
-    NSString *sizeString = name.length > 5 ? [name substringFromIndex:5] : @"";
-    
-    range = [sizeString rangeOfString:@"@"];
-    if (range.location != NSNotFound) {
-        sizeString = [sizeString substringToIndex:range.location];
-    }
+    NSString *sizeString = [NSString stringWithFormat:@"%.0fx%.0f", originSize.width, originSize.height];
     
     [dict setObject:sizeString forKey:@"size"];
     [self.images addObject:dict];
@@ -329,7 +383,7 @@ NSLog(@"-------\n"); \
         [path addClip];
     }
     
-    [image drawInRect:NSMakeRect(0, 0, size.width, size.height) fromRect:NSZeroRect operation:NSCompositeSourceOver fraction:1.0 respectFlipped:YES hints:nil];
+    [image drawInRect:NSMakeRect(0, 0, size.width, size.height) fromRect:NSZeroRect operation:NSCompositingOperationSourceOver fraction:1.0 respectFlipped:YES hints:nil];
     
     [returnImage unlockFocus];
     

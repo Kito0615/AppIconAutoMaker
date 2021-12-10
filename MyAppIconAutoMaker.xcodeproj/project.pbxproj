@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		04E2DD2D2762F05C00B9CF7D /* Template.json in Resources */ = {isa = PBXBuildFile; fileRef = 04E2DD2C2762F05C00B9CF7D /* Template.json */; };
 		7CF328141E162E9C000B9EFD /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7CF328161E162E9C000B9EFD /* Localizable.strings */; };
 		7CF3281A1E1630FD000B9EFD /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7CF3281C1E1630FD000B9EFD /* InfoPlist.strings */; };
 		8AEB319D1C17D5D800C1D6F6 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AEB319C1C17D5D800C1D6F6 /* AppDelegate.m */; };
@@ -37,15 +38,16 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		7CF328151E162E9C000B9EFD /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
+		04E2DD2C2762F05C00B9CF7D /* Template.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Template.json; sourceTree = "<group>"; };
+		04E2DD942762FBA600B9CF7D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		04E2DD952762FBBD00B9CF7D /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		04E2DD962762FBBD00B9CF7D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		7CF328171E162E9D000B9EFD /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
-		7CF3281B1E1630FD000B9EFD /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		7CF3281D1E163101000B9EFD /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
 		8AEB31981C17D5D800C1D6F6 /* MyAppIconAutoMaker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyAppIconAutoMaker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8AEB319B1C17D5D800C1D6F6 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		8AEB319C1C17D5D800C1D6F6 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		8AEB319F1C17D5D800C1D6F6 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		8AEB31A41C17D5D800C1D6F6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		8AEB31A61C17D5D800C1D6F6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8AEB31AB1C17D5D800C1D6F6 /* MyAppIconAutoMakerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MyAppIconAutoMakerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8AEB31AF1C17D5D800C1D6F6 /* MyAppIconAutoMakerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyAppIconAutoMakerTests.m; sourceTree = "<group>"; };
@@ -57,7 +59,6 @@
 		8AF927801C1FEB9F00566DE8 /* RedBorderImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RedBorderImageView.m; sourceTree = "<group>"; };
 		8AF927821C1FFA3900566DE8 /* SizeFile.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = SizeFile.plist; sourceTree = "<group>"; };
 		99863D731E95F8BC00B3E777 /* AppIcon.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = AppIcon.xcassets; sourceTree = "<group>"; };
-		99863D831E96170D00B3E777 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = "zh-Hans"; path = "zh-Hans.lproj/MainMenu.xib"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +110,7 @@
 		8AEB319A1C17D5D800C1D6F6 /* MyAppIconAutoMaker */ = {
 			isa = PBXGroup;
 			children = (
+				04E2DD2C2762F05C00B9CF7D /* Template.json */,
 				8AF9277F1C1FEB9F00566DE8 /* RedBorderImageView.h */,
 				8AF927801C1FEB9F00566DE8 /* RedBorderImageView.m */,
 				8AF927821C1FFA3900566DE8 /* SizeFile.plist */,
@@ -211,7 +213,7 @@
 		8AEB31901C17D5D800C1D6F6 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0820;
+				LastUpgradeCheck = 1240;
 				ORGANIZATIONNAME = AnarL;
 				TargetAttributes = {
 					8AEB31971C17D5D800C1D6F6 = {
@@ -230,11 +232,10 @@
 			};
 			buildConfigurationList = 8AEB31931C17D5D800C1D6F6 /* Build configuration list for PBXProject "MyAppIconAutoMaker" */;
 			compatibilityVersion = "Xcode 3.2";
-			developmentRegion = English;
+			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
-				Base,
 				"zh-Hans",
 			);
 			mainGroup = 8AEB318F1C17D5D800C1D6F6;
@@ -259,6 +260,7 @@
 				8AEB31A51C17D5D800C1D6F6 /* MainMenu.xib in Resources */,
 				8AF927831C1FFA3900566DE8 /* SizeFile.plist in Resources */,
 				7CF3281A1E1630FD000B9EFD /* InfoPlist.strings in Resources */,
+				04E2DD2D2762F05C00B9CF7D /* Template.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -324,8 +326,8 @@
 		7CF328161E162E9C000B9EFD /* Localizable.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
-				7CF328151E162E9C000B9EFD /* Base */,
 				7CF328171E162E9D000B9EFD /* zh-Hans */,
+				04E2DD942762FBA600B9CF7D /* en */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";
@@ -333,8 +335,8 @@
 		7CF3281C1E1630FD000B9EFD /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
-				7CF3281B1E1630FD000B9EFD /* Base */,
 				7CF3281D1E163101000B9EFD /* zh-Hans */,
+				04E2DD962762FBBD00B9CF7D /* en */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
@@ -342,8 +344,7 @@
 		8AEB31A31C17D5D800C1D6F6 /* MainMenu.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
-				8AEB31A41C17D5D800C1D6F6 /* Base */,
-				99863D831E96170D00B3E777 /* zh-Hans */,
+				04E2DD952762FBBD00B9CF7D /* en */,
 			);
 			name = MainMenu.xib;
 			sourceTree = "<group>";
@@ -360,14 +361,23 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -406,14 +416,23 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -442,12 +461,15 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSET_PACK_MANIFEST_URL_PREFIX = "";
 				CLANG_CXX_LANGUAGE_STANDARD = "c++0x";
-				CLANG_CXX_LIBRARY = "libstdc++";
+				CLANG_CXX_LIBRARY = "compiler-default";
+				CODE_SIGN_IDENTITY = "-";
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "";
 				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1210;
 				INFOPLIST_FILE = MyAppIconAutoMaker/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				MARKETING_VERSION = 1.5.1;
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.AnarL.MyAppIconAutoMaker;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -461,12 +483,15 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSET_PACK_MANIFEST_URL_PREFIX = "";
 				CLANG_CXX_LANGUAGE_STANDARD = "c++0x";
-				CLANG_CXX_LIBRARY = "libstdc++";
+				CLANG_CXX_LIBRARY = "compiler-default";
+				CODE_SIGN_IDENTITY = "-";
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "";
 				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1210;
 				INFOPLIST_FILE = MyAppIconAutoMaker/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				MARKETING_VERSION = 1.5.1;
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.AnarL.MyAppIconAutoMaker;
 				PRODUCT_NAME = "$(TARGET_NAME)";

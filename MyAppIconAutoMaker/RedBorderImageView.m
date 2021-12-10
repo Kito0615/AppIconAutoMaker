@@ -26,7 +26,7 @@
 - (BOOL)performDragOperation:(id<NSDraggingInfo>)sender
 {
     NSData *data = nil;
-    NSString *errorDescription;
+    NSError *errorDescription;
     
     NSPasteboard *pasteboard = [sender draggingPasteboard];
     
@@ -35,7 +35,7 @@
         data = [pasteboard dataForType:NSFilenamesPboardType];
     
     if (data) {
-        NSArray * fileNames = [NSPropertyListSerialization propertyListFromData:data mutabilityOption:NSPropertyListImmutable format:nil errorDescription:&errorDescription];
+        NSArray * fileNames = [NSPropertyListSerialization propertyListWithData:data options:NSPropertyListImmutable format:nil error:&errorDescription];
         NSString * filePath = [fileNames lastObject];
         
         NSImage * pic = [[NSImage alloc] initWithContentsOfFile:filePath];

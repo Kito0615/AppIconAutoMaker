@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="12120" systemVersion="16G29" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="17701" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
         <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="12120"/>
-        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="17701"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -674,9 +673,10 @@
                     </menu>
                 </menuItem>
             </items>
+            <point key="canvasLocation" x="14" y="154"/>
         </menu>
-        <window allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" frameAutosaveName="" animationBehavior="default" id="WVw-lC-8Wo">
-            <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
+        <window allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" frameAutosaveName="" animationBehavior="default" id="WVw-lC-8Wo">
+            <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES" fullSizeContentView="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
             <rect key="contentRect" x="964" y="358" width="850" height="650"/>
             <rect key="screenRect" x="0.0" y="0.0" width="2560" height="1417"/>
@@ -684,29 +684,25 @@
             <value key="maxSize" type="size" width="850" height="650"/>
             <view key="contentView" wantsLayer="YES" id="bHN-By-Cj8">
                 <rect key="frame" x="0.0" y="0.0" width="850" height="650"/>
-                <autoresizingMask key="autoresizingMask"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                 <subviews>
-                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3Lj-pr-gDe">
-                        <rect key="frame" x="146" y="601" width="558" height="29"/>
+                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3Lj-pr-gDe">
+                        <rect key="frame" x="154" y="602" width="543" height="28"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="Drag Image Into Red View(1024x1024 best for icon)" id="Sdc-JK-7h0">
                             <font key="font" metaFont="system" size="24"/>
                             <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
                     </textField>
-                    <imageView wantsLayer="YES" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="YgO-Ow-x1C" customClass="RedBorderImageView">
-                        <rect key="frame" x="300" y="331" width="250" height="250"/>
-                        <constraints>
-                            <constraint firstAttribute="width" constant="250" id="Ava-Nw-WCw"/>
-                            <constraint firstAttribute="width" secondItem="YgO-Ow-x1C" secondAttribute="height" multiplier="1:1" id="wco-zl-ekM"/>
-                        </constraints>
+                    <imageView wantsLayer="YES" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YgO-Ow-x1C" customClass="RedBorderImageView">
+                        <rect key="frame" x="300" y="332" width="250" height="250"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" id="iiU-dc-f6v"/>
                     </imageView>
-                    <comboBox verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="smy-og-ycD">
-                        <rect key="frame" x="435" y="244" width="118" height="26"/>
-                        <constraints>
-                            <constraint firstAttribute="width" constant="115" id="JL9-mc-n4y"/>
-                        </constraints>
+                    <comboBox verticalHuggingPriority="750" fixedFrame="YES" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="smy-og-ycD">
+                        <rect key="frame" x="435" y="246" width="118" height="25"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <comboBoxCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" placeholderString="SelectPlatform" drawsBackground="YES" completes="NO" numberOfVisibleItems="6" id="OGv-4H-9Na">
                             <font key="font" metaFont="system"/>
                             <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
@@ -765,16 +761,18 @@
                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
                     </textField>
-                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7uA-u6-j1y">
-                        <rect key="frame" x="298" y="246" width="80" height="24"/>
+                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7uA-u6-j1y">
+                        <rect key="frame" x="298" y="248" width="124" height="23"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="Platform" id="ObK-LX-Dr1">
                             <font key="font" metaFont="system" size="20"/>
                             <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
                     </textField>
-                    <button hidden="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ly2-lK-x42">
-                        <rect key="frame" x="433" y="217" width="77" height="18"/>
+                    <button hidden="YES" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ly2-lK-x42">
+                        <rect key="frame" x="433" y="219" width="77" height="18"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <buttonCell key="cell" type="check" title="Rounded" bezelStyle="regularSquare" imagePosition="left" inset="2" id="zO4-TW-Hc3">
                             <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                             <font key="font" metaFont="system"/>
@@ -806,18 +804,6 @@
                         </connections>
                     </button>
                 </subviews>
-                <constraints>
-                    <constraint firstItem="YgO-Ow-x1C" firstAttribute="top" secondItem="3Lj-pr-gDe" secondAttribute="bottom" constant="20" id="GEl-jM-sC8"/>
-                    <constraint firstItem="smy-og-ycD" firstAttribute="centerY" secondItem="7uA-u6-j1y" secondAttribute="centerY" id="L7T-Ag-08a"/>
-                    <constraint firstItem="3Lj-pr-gDe" firstAttribute="centerX" secondItem="bHN-By-Cj8" secondAttribute="centerX" id="NZy-eY-1gN"/>
-                    <constraint firstItem="Ly2-lK-x42" firstAttribute="top" secondItem="smy-og-ycD" secondAttribute="bottom" constant="15" id="Qou-Tn-c2L"/>
-                    <constraint firstItem="YgO-Ow-x1C" firstAttribute="centerX" secondItem="bHN-By-Cj8" secondAttribute="centerX" id="cl5-XC-dlD"/>
-                    <constraint firstItem="smy-og-ycD" firstAttribute="trailing" secondItem="YgO-Ow-x1C" secondAttribute="trailing" id="crT-NN-cVm"/>
-                    <constraint firstItem="7uA-u6-j1y" firstAttribute="top" secondItem="YgO-Ow-x1C" secondAttribute="bottom" constant="61" id="ebt-QI-G4U"/>
-                    <constraint firstItem="7uA-u6-j1y" firstAttribute="leading" secondItem="YgO-Ow-x1C" secondAttribute="leading" id="hus-EE-7ev"/>
-                    <constraint firstItem="Ly2-lK-x42" firstAttribute="leading" secondItem="smy-og-ycD" secondAttribute="leading" id="oOp-AH-39Z"/>
-                    <constraint firstItem="3Lj-pr-gDe" firstAttribute="top" secondItem="bHN-By-Cj8" secondAttribute="top" constant="20" id="tPf-i5-rox"/>
-                </constraints>
             </view>
             <point key="canvasLocation" x="413" y="560"/>
         </window>

@@ -12,7 +12,6 @@
 @interface AppDelegate : NSObject <NSApplicationDelegate>
 {
     CALayer * _bigIconLayer;
-    NSOpenPanel * _openPanel;
 }
 @property (weak) IBOutlet NSComboBox *platformSelection;
 
