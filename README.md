@@ -1,4 +1,4 @@
-# AppIconAutoMaker [![star this repo](http://githubbadges.com/star.svg?user=Kito0615&repo=AppIconAutoMaker&style=default)](https://github.com/Kito0615/AppIconAutoMaker)  [![fork this repo](http://githubbadges.com/fork.svg?user=Kito0615&repo=AppIconAutoMaker&style=default)](https://github.com/Kito0615/AppIconAutoMaker/fork) ![](https://img.shields.io/badge/Platform-OS%20X-green.svg?style=plastic)
+# AppIconAutoMaker [![GitHub stars](https://img.shields.io/github/stars/Kito0615/AppIconAutoMaker?style=plastic)](https://github.com/Kito0615/AppIconAutoMaker/stargazers)  [![GitHub forks](https://img.shields.io/github/forks/Kito0615/AppIconAutoMaker?style=plastic)](https://github.com/Kito0615/AppIconAutoMaker/network) ![](https://img.shields.io/badge/Platform-OS%20X-green.svg?style=plastic)
 ### Use this app you can create iPhone/iPad/MAC icons faster.
 
 ##### 1.First, you should drag an image which size prefer to be 1024x1024, because you should upload an ArtWork in this size to iTunesconnect.
