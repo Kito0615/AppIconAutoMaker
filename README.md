@@ -1,4 +1,4 @@
-[![Kito0615's GitHub stats](https://github-readme-stats.vercel.app/api?username=Kito0615&show_icons=true&count_private=true&theme=vue)](https://github.com/Kito0615)
+[![Kito0615's GitHub stats](https://github-readme-stats.vercel.app/api?username=Kito0615&show_icons=true&count_private=true&theme=vue)](https://github.com/Kito0615/AppIconAutoMaker)
 
 # AppIconAutoMaker [![GitHub stars](https://img.shields.io/github/stars/Kito0615/AppIconAutoMaker?style=plastic)](https://github.com/Kito0615/AppIconAutoMaker/stargazers)  [![GitHub forks](https://img.shields.io/github/forks/Kito0615/AppIconAutoMaker?style=plastic)](https://github.com/Kito0615/AppIconAutoMaker/network) ![](https://img.shields.io/badge/Platform-OS%20X-green.svg?style=plastic)
 ### Use this app you can create iPhone/iPad/MAC icons faster.
